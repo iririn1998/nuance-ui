@@ -1,0 +1,20 @@
+{
+  "name": "nuance-ui-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter nuance-ui build",
+    "dev": "pnpm --filter @nuance-ui/storybook dev",
+    "test": "pnpm --filter nuance-ui test",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "typescript": "^5.5.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
