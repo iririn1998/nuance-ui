@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "nuance-ui": ["../../packages/core/src"]
+    }
   },
   "include": ["stories/**/*", ".storybook/**/*"],
   "exclude": ["node_modules", "dist"]
