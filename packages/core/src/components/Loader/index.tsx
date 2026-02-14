@@ -4,7 +4,7 @@ import {
   type LoaderProps as MantineLoaderProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Loader.module.css";
+import className from "./index.module.css";
 
 export interface NuLoaderProps extends MantineLoaderProps {}
 

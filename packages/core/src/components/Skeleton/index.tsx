@@ -4,7 +4,7 @@ import {
   type SkeletonProps as MantineSkeletonProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Skeleton.module.css";
+import className from "./index.module.css";
 
 export interface NuSkeletonProps extends MantineSkeletonProps {}
 

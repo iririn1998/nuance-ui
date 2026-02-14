@@ -4,7 +4,7 @@ import {
   type SegmentedControlProps as MantineSegmentedControlProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./SegmentedControl.module.css";
+import className from "./index.module.css";
 
 export interface NuSegmentedControlProps extends MantineSegmentedControlProps {}
 

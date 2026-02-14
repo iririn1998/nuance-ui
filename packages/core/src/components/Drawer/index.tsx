@@ -2,7 +2,7 @@ import {
   Drawer as MantineDrawer,
   type DrawerProps as MantineDrawerProps,
 } from "@mantine/core";
-import className from "./Drawer.module.css";
+import className from "./index.module.css";
 
 export interface NuDrawerProps extends MantineDrawerProps {}
 

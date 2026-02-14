@@ -4,7 +4,7 @@ import {
   type DividerProps as MantineDividerProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Divider.module.css";
+import className from "./index.module.css";
 
 export interface NuDividerProps extends MantineDividerProps {}
 

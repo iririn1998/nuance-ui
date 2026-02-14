@@ -4,7 +4,7 @@ import {
   type ProgressProps as MantineProgressProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Progress.module.css";
+import className from "./index.module.css";
 
 export interface NuProgressProps extends MantineProgressProps {}
 

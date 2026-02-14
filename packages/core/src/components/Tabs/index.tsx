@@ -4,7 +4,7 @@ import {
   type TabsProps as MantineTabsProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Tabs.module.css";
+import className from "./index.module.css";
 
 export interface NuTabsProps extends MantineTabsProps {}
 

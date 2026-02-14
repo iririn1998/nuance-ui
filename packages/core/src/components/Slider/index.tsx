@@ -4,7 +4,7 @@ import {
   type SliderProps as MantineSliderProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Slider.module.css";
+import className from "./index.module.css";
 
 export interface NuSliderProps extends MantineSliderProps {}
 

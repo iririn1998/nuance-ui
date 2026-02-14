@@ -4,7 +4,7 @@ import {
   type NotificationProps as MantineNotificationProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Notification.module.css";
+import className from "./index.module.css";
 
 export interface NuNotificationProps extends MantineNotificationProps {}
 

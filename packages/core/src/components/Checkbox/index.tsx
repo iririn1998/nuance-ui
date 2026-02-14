@@ -4,7 +4,7 @@ import {
   type CheckboxProps as MantineCheckboxProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Checkbox.module.css";
+import className from "./index.module.css";
 
 export interface NuCheckboxProps extends MantineCheckboxProps {}
 

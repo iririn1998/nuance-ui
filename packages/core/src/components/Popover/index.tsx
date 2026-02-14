@@ -2,7 +2,7 @@ import {
   Popover as MantinePopover,
   type PopoverProps as MantinePopoverProps,
 } from "@mantine/core";
-import className from "./Popover.module.css";
+import className from "./index.module.css";
 
 export interface NuPopoverProps extends MantinePopoverProps {}
 

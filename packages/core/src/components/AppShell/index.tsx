@@ -3,7 +3,7 @@ import {
   type AppShellProps as MantineAppShellProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./AppShell.module.css";
+import className from "./index.module.css";
 
 export interface NuAppShellProps extends MantineAppShellProps {}
 

@@ -5,7 +5,7 @@ import {
 } from "@mantine/core";
 import clsx from "clsx";
 import type { NeumorphismVariant } from "../../theme";
-import className from "./Avatar.module.css";
+import className from "./index.module.css";
 
 export interface NuAvatarProps extends MantineAvatarProps {
   /** ニューモーフィズムの variant */

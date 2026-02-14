@@ -5,7 +5,7 @@ import {
   type RadioGroupProps as MantineRadioGroupProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Radio.module.css";
+import className from "./index.module.css";
 
 export interface NuRadioProps extends MantineRadioProps {}
 

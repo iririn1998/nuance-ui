@@ -2,7 +2,7 @@ import {
   Modal as MantineModal,
   type ModalProps as MantineModalProps,
 } from "@mantine/core";
-import className from "./Modal.module.css";
+import className from "./index.module.css";
 
 export interface NuModalProps extends MantineModalProps {}
 

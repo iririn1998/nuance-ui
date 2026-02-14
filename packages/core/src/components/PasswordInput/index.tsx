@@ -5,7 +5,7 @@ import {
 } from "@mantine/core";
 import clsx from "clsx";
 import type { NeumorphismVariant } from "../../theme";
-import className from "../TextInput/TextInput.module.css";
+import className from "../TextInput/index.module.css";
 
 export interface NuPasswordInputProps extends MantinePasswordInputProps {
   /** ニューモーフィズムの variant */

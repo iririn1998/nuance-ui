@@ -2,7 +2,7 @@ import {
   Tooltip as MantineTooltip,
   type TooltipProps as MantineTooltipProps,
 } from "@mantine/core";
-import className from "./Tooltip.module.css";
+import className from "./index.module.css";
 
 export interface NuTooltipProps extends MantineTooltipProps {}
 

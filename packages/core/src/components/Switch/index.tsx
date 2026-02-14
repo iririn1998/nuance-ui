@@ -4,7 +4,7 @@ import {
   type SwitchProps as MantineSwitchProps,
 } from "@mantine/core";
 import clsx from "clsx";
-import className from "./Switch.module.css";
+import className from "./index.module.css";
 
 export interface NuSwitchProps extends MantineSwitchProps {}
 

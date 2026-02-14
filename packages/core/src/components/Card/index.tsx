@@ -5,7 +5,7 @@ import {
 } from "@mantine/core";
 import clsx from "clsx";
 import type { NeumorphismVariant } from "../../theme";
-import className from "./Card.module.css";
+import className from "./index.module.css";
 
 export interface NuCardProps extends MantineCardProps {
   /** ニューモーフィズムの variant */
