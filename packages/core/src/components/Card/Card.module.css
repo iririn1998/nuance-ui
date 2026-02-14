@@ -1,0 +1,36 @@
+.root {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 8px;
+  --neu-blur: 16px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+
+  background-color: var(--neu-bg-base);
+  border: none;
+  transition: box-shadow 0.2s ease;
+}
+
+:global([data-mantine-color-scheme="dark"]) .root {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+.raised {
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.inset {
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.flat {
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}

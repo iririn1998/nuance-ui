@@ -1,0 +1,50 @@
+/* Shared neumorphism CSS variables and base styles */
+.neuBase {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 6px;
+  --neu-blur: 12px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+  --neu-distance-sm: 3px;
+  --neu-blur-sm: 6px;
+  --neu-distance-lg: 8px;
+  --neu-blur-lg: 16px;
+}
+
+:global([data-mantine-color-scheme="dark"]) .neuBase {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+.raised {
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.raisedSm {
+  box-shadow:
+    var(--neu-distance-sm) var(--neu-distance-sm) var(--neu-blur-sm) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance-sm)) calc(-1 * var(--neu-distance-sm)) var(--neu-blur-sm)
+      var(--neu-shadow-light);
+}
+
+.inset {
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.insetSm {
+  box-shadow:
+    inset var(--neu-distance-sm) var(--neu-distance-sm) var(--neu-blur-sm) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance-sm)) calc(-1 * var(--neu-distance-sm)) var(--neu-blur-sm)
+      var(--neu-shadow-light);
+}
+
+.flat {
+  box-shadow: none;
+}

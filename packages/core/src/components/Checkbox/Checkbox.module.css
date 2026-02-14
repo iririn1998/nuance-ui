@@ -1,0 +1,30 @@
+.root {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 3px;
+  --neu-blur: 6px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+}
+
+:global([data-mantine-color-scheme="dark"]) .root {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+.input {
+  background-color: var(--neu-bg-base);
+  border: none;
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+  transition: box-shadow 0.2s ease;
+}
+
+.input:checked {
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}

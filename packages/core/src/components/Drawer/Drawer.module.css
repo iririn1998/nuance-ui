@@ -1,0 +1,59 @@
+.content {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 10px;
+  --neu-blur: 20px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.2);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+
+  background-color: var(--neu-bg-base);
+  border: none;
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+:global([data-mantine-color-scheme="dark"]) .content {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.5);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+.header {
+  background-color: transparent;
+}
+
+.body {
+  background-color: transparent;
+}
+
+.close {
+  --neu-distance: 3px;
+  --neu-blur: 6px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+
+  background-color: var(--neu-bg-base);
+  border: none;
+  border-radius: var(--mantine-radius-sm);
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+  transition: box-shadow 0.15s ease;
+}
+
+.close:hover {
+  box-shadow:
+    calc(var(--neu-distance) + 1px) calc(var(--neu-distance) + 1px)
+      calc(var(--neu-blur) + 2px) var(--neu-shadow-dark),
+    calc(-1 * (var(--neu-distance) + 1px)) calc(-1 * (var(--neu-distance) + 1px))
+      calc(var(--neu-blur) + 2px) var(--neu-shadow-light);
+}
+
+.close:active {
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}

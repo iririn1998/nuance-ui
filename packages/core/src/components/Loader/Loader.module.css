@@ -1,0 +1,13 @@
+.root {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 4px;
+  --neu-blur: 8px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+}
+
+:global([data-mantine-color-scheme="dark"]) .root {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}

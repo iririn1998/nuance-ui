@@ -1,0 +1,48 @@
+.root {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 4px;
+  --neu-blur: 8px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+}
+
+:global([data-mantine-color-scheme="dark"]) .root {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+.list {
+  background-color: var(--neu-bg-base);
+  border: none;
+  border-radius: var(--mantine-radius-md);
+  padding: 4px;
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.tab {
+  border: none;
+  border-radius: var(--mantine-radius-sm);
+  background-color: transparent;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  color: var(--mantine-color-text);
+}
+
+.tab:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.tab[data-active] {
+  background-color: var(--neu-bg-base);
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.panel {
+  padding-top: var(--mantine-spacing-md);
+}

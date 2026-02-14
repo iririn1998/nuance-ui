@@ -1,0 +1,81 @@
+.root {
+  --neu-bg-base: #e0e5ec;
+  --neu-distance: 4px;
+  --neu-blur: 8px;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+
+  background-color: var(--neu-bg-base);
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  color: var(--mantine-color-text);
+}
+
+:global([data-mantine-color-scheme="dark"]) .root {
+  --neu-bg-base: #2d3436;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+.raised {
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.raised:hover {
+  box-shadow:
+    calc(var(--neu-distance) + 1px) calc(var(--neu-distance) + 1px)
+      calc(var(--neu-blur) + 2px) var(--neu-shadow-dark),
+    calc(-1 * (var(--neu-distance) + 1px)) calc(-1 * (var(--neu-distance) + 1px))
+      calc(var(--neu-blur) + 2px) var(--neu-shadow-light);
+}
+
+.raised:active {
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.inset {
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.inset:hover {
+  box-shadow:
+    inset calc(var(--neu-distance) - 1px) calc(var(--neu-distance) - 1px)
+      calc(var(--neu-blur) - 2px) var(--neu-shadow-dark),
+    inset calc(-1 * (var(--neu-distance) - 1px)) calc(-1 * (var(--neu-distance) - 1px))
+      calc(var(--neu-blur) - 2px) var(--neu-shadow-light);
+}
+
+.flat {
+  box-shadow: none;
+}
+
+.flat:hover {
+  box-shadow:
+    var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.flat:active {
+  box-shadow:
+    inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--neu-shadow-light);
+}
+
+.root:disabled,
+.root[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}

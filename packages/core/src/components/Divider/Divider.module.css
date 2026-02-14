@@ -1,0 +1,29 @@
+.root {
+  --neu-bg-base: #e0e5ec;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.12);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--neu-shadow-dark),
+    var(--neu-shadow-light)
+  );
+}
+
+:global([data-mantine-color-scheme="dark"]) .root {
+  --neu-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+/* Vertical orientation */
+.root[data-orientation="vertical"] {
+  height: auto;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--neu-shadow-dark),
+    var(--neu-shadow-light)
+  );
+}

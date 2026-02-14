@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { NuButton } from "nuance-ui";
 
 const meta: Meta<typeof NuButton> = {
-  title: "Components/Button",
+  title: "Components/Buttons/Button",
   component: NuButton,
   tags: ["autodocs"],
   argTypes: {
