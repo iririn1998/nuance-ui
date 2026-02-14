@@ -32,6 +32,9 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
   "peerDependencies": {
     "@mantine/core": "^7.0.0",
     "@mantine/hooks": "^7.0.0",
