@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuModal, NuButton, NuTextInput, NuGroup } from "nuance-ui";
+import { NuModal } from ".";
+import { NuButton } from "../Button";
+import { NuTextInput } from "../TextInput";
+import { NuGroup } from "../Group";
 import { Text } from "@mantine/core";
 
 const meta: Meta<typeof NuModal> = {

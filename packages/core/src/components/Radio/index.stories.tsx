@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuRadio, NuRadioGroup } from "nuance-ui";
+import { NuRadio, NuRadioGroup } from ".";
 
 const meta: Meta<typeof NuRadio> = {
   title: "Components/Inputs/Radio",

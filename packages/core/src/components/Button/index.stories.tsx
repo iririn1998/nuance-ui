@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuButton } from "nuance-ui";
+import { NuButton } from ".";
 
 const meta: Meta<typeof NuButton> = {
   title: "Components/Buttons/Button",

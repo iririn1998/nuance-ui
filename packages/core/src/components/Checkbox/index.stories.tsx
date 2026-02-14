@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuCheckbox } from "nuance-ui";
+import { NuCheckbox } from ".";
 
 const meta: Meta<typeof NuCheckbox> = {
   title: "Components/Inputs/Checkbox",

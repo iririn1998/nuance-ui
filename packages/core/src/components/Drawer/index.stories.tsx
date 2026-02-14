@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuDrawer, NuButton } from "nuance-ui";
+import { NuDrawer } from ".";
+import { NuButton } from "../Button";
 import { Text } from "@mantine/core";
 
 const meta: Meta<typeof NuDrawer> = {

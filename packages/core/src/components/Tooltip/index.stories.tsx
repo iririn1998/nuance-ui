@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuTooltip, NuButton } from "nuance-ui";
+import { NuTooltip } from ".";
+import { NuButton } from "../Button";
 
 const meta: Meta<typeof NuTooltip> = {
   title: "Components/Overlays/Tooltip",

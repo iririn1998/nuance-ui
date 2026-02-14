@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuAlert, NuStack } from "nuance-ui";
+import { NuAlert } from ".";
+import { NuStack } from "../Stack";
 
 const meta: Meta<typeof NuAlert> = {
   title: "Components/Feedback/Alert",

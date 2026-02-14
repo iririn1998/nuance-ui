@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuBadge, NuGroup } from "nuance-ui";
+import { NuBadge } from ".";
+import { NuGroup } from "../Group";
 
 const meta: Meta<typeof NuBadge> = {
   title: "Components/DataDisplay/Badge",

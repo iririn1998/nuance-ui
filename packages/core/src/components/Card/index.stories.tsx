@@ -1,7 +1,10 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuCard, NuButton, NuGroup, NuBadge } from "nuance-ui";
-import { Text, Image } from "@mantine/core";
+import { NuCard } from ".";
+import { NuButton } from "../Button";
+import { NuGroup } from "../Group";
+import { NuBadge } from "../Badge";
+import { Text } from "@mantine/core";
 
 const meta: Meta<typeof NuCard> = {
   title: "Components/Layout/Card",

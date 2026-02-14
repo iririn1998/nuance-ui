@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuProgress } from "nuance-ui";
+import { NuProgress } from ".";
 
 const meta: Meta<typeof NuProgress> = {
   title: "Components/Feedback/Progress",

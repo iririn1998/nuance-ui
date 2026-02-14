@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuTextInput } from "nuance-ui";
+import { NuTextInput } from ".";
 
 const meta: Meta<typeof NuTextInput> = {
   title: "Components/Inputs/TextInput",

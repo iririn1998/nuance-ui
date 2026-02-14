@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuDivider, NuStack } from "nuance-ui";
+import { NuDivider } from ".";
+import { NuStack } from "../Stack";
 import { Text } from "@mantine/core";
 
 const meta: Meta<typeof NuDivider> = {

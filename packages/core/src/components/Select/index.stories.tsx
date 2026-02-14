@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuSelect, NuMultiSelect } from "nuance-ui";
+import { NuSelect } from ".";
+import { NuMultiSelect } from "../MultiSelect";
 
 const meta: Meta<typeof NuSelect> = {
   title: "Components/Inputs/Select",

@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuAvatar, NuGroup } from "nuance-ui";
+import { NuAvatar } from ".";
+import { NuGroup } from "../Group";
 
 const meta: Meta<typeof NuAvatar> = {
   title: "Components/DataDisplay/Avatar",

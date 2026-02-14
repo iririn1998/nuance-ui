@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuSlider } from "nuance-ui";
+import { NuSlider } from ".";
 
 const meta: Meta<typeof NuSlider> = {
   title: "Components/Inputs/Slider",

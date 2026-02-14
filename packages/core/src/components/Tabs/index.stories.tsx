@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuTabs, NuTabsList, NuTabsTab, NuTabsPanel } from "nuance-ui";
+import { NuTabs, NuTabsList, NuTabsTab, NuTabsPanel } from ".";
 import { Text } from "@mantine/core";
 
 const meta: Meta<typeof NuTabs> = {

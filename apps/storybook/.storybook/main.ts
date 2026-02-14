@@ -3,7 +3,7 @@ import { mergeConfig } from "vite";
 import path from "path";
 
 const config: StorybookConfig = {
-  stories: ["../stories/**/*.stories.@(ts|tsx)"],
+  stories: ["../../../packages/core/src/**/*.stories.@(ts|tsx)"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -20,7 +20,7 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          "nuance-ui": path.resolve(__dirname, "../../packages/core/src"),
+          "nuance-ui": path.resolve(__dirname, "../../../packages/core/src"),
         },
       },
     });

@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuActionIcon, NuGroup } from "nuance-ui";
+import { NuActionIcon } from ".";
+import { NuGroup } from "../Group";
 
 const meta: Meta<typeof NuActionIcon> = {
   title: "Components/Buttons/ActionIcon",

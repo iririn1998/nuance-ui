@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuSegmentedControl } from "nuance-ui";
+import { NuSegmentedControl } from ".";
 
 const meta: Meta<typeof NuSegmentedControl> = {
   title: "Components/Navigation/SegmentedControl",

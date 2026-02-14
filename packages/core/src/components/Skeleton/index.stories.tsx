@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuSkeleton, NuStack } from "nuance-ui";
+import { NuSkeleton } from ".";
+import { NuStack } from "../Stack";
 
 const meta: Meta<typeof NuSkeleton> = {
   title: "Components/Feedback/Skeleton",

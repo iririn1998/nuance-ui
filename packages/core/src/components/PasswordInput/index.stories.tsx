@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuPasswordInput } from "nuance-ui";
+import { NuPasswordInput } from ".";
 
 const meta: Meta<typeof NuPasswordInput> = {
   title: "Components/Inputs/PasswordInput",

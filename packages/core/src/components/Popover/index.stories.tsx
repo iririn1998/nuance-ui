@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuPopover, NuPopoverTarget, NuPopoverDropdown, NuButton } from "nuance-ui";
+import { NuPopover, NuPopoverTarget, NuPopoverDropdown } from ".";
+import { NuButton } from "../Button";
 import { Text } from "@mantine/core";
 
 const meta: Meta<typeof NuPopover> = {

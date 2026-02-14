@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NuSwitch } from "nuance-ui";
+import { NuSwitch } from ".";
 
 const meta: Meta<typeof NuSwitch> = {
   title: "Components/Inputs/Switch",
