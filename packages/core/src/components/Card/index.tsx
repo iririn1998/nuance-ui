@@ -1,7 +1,8 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import {
   Card as MantineCard,
   type CardProps as MantineCardProps,
+  type CardSectionProps,
 } from "@mantine/core";
 import clsx from "clsx";
 import type { NeumorphismVariant } from "../../theme";
@@ -36,4 +37,4 @@ export const NuCard = forwardRef<HTMLDivElement, NuCardProps>(
 NuCard.displayName = "NuCard";
 
 /** NuCard.Section - Card のセクションコンポーネント */
-export const NuCardSection = MantineCard.Section;
+export const NuCardSection: React.FC<CardSectionProps> = MantineCard.Section;
