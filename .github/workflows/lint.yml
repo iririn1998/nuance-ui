@@ -1,6 +1,11 @@
 name: Lint & Format Check
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/core/**"
   pull_request:
     paths:
       - "packages/core/**"
