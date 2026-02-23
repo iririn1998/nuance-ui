@@ -6,7 +6,7 @@
   --neu-shadow-light: rgba(255, 255, 255, 0.8);
 }
 
-:global([data-mantine-color-scheme="dark"]) .root {
+:global([data-mantine-color-scheme='dark']) .root {
   --neu-bg-base: #2d3436;
   --neu-shadow-dark: rgba(0, 0, 0, 0.4);
   --neu-shadow-light: rgba(255, 255, 255, 0.05);
@@ -21,30 +21,27 @@
 .inset .input {
   box-shadow:
     inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
 }
 
 .inset .input:focus {
   box-shadow:
-    inset calc(var(--neu-distance) + 1px) calc(var(--neu-distance) + 1px)
-      calc(var(--neu-blur) + 2px) var(--neu-shadow-dark),
-    inset calc(-1 * (var(--neu-distance) + 1px)) calc(-1 * (var(--neu-distance) + 1px))
-      calc(var(--neu-blur) + 2px) var(--neu-shadow-light);
+    inset calc(var(--neu-distance) + 1px) calc(var(--neu-distance) + 1px) calc(var(--neu-blur) + 2px)
+      var(--neu-shadow-dark),
+    inset calc(-1 * (var(--neu-distance) + 1px)) calc(-1 * (var(--neu-distance) + 1px)) calc(var(--neu-blur) + 2px)
+      var(--neu-shadow-light);
 }
 
 .raised .input {
   box-shadow:
     var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
 }
 
 .raised .input:focus {
   box-shadow:
     inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
 }
 
 .flat .input {
@@ -55,7 +52,6 @@
 .flat .input:focus {
   box-shadow:
     inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
   border-color: transparent;
 }

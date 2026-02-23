@@ -1,11 +1,10 @@
-import { forwardRef } from "react";
-import {
-  Select as MantineSelect,
-  type SelectProps as MantineSelectProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "../TextInput/index.module.css";
+import { Select as MantineSelect, type SelectProps as MantineSelectProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from '../TextInput/index.module.css';
 
 export interface NuSelectProps extends MantineSelectProps {
   /** ニューモーフィズムの variant */
@@ -16,7 +15,7 @@ export interface NuSelectProps extends MantineSelectProps {
  * ニューモーフィズムスタイルの Select コンポーネント
  */
 export const NuSelect = forwardRef<HTMLInputElement, NuSelectProps>(
-  ({ neuVariant = "inset", className: propsClassName, classNames, ...props }, ref) => {
+  ({ neuVariant = 'inset', className: propsClassName, classNames, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -34,7 +33,7 @@ export const NuSelect = forwardRef<HTMLInputElement, NuSelectProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuSelect.displayName = "NuSelect";
+NuSelect.displayName = 'NuSelect';

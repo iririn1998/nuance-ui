@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuSwitch } from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { NuSwitch } from '.';
 
 const meta: Meta<typeof NuSwitch> = {
-  title: "Components/Inputs/Switch",
+  title: 'Components/Inputs/Switch',
   component: NuSwitch,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -12,13 +13,13 @@ type Story = StoryObj<typeof NuSwitch>;
 
 export const Default: Story = {
   args: {
-    label: "Enable notifications",
+    label: 'Enable notifications',
   },
 };
 
 export const Checked: Story = {
   args: {
-    label: "Dark mode",
+    label: 'Dark mode',
     defaultChecked: true,
   },
 };

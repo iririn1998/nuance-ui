@@ -1,13 +1,14 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuPopover, NuPopoverTarget, NuPopoverDropdown } from ".";
-import { NuButton } from "../Button";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuPopover, NuPopoverTarget, NuPopoverDropdown } from '.';
+import { NuButton } from '../Button';
 
 const meta: Meta<typeof NuPopover> = {
-  title: "Components/Overlays/Popover",
+  title: 'Components/Overlays/Popover',
   component: NuPopover,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;

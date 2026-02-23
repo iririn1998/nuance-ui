@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-import {
-  Tabs as MantineTabs,
-  type TabsProps as MantineTabsProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+import { Tabs as MantineTabs, type TabsProps as MantineTabsProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuTabsProps extends MantineTabsProps {}
 
@@ -27,10 +25,10 @@ export const NuTabs = forwardRef<HTMLDivElement, NuTabsProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuTabs.displayName = "NuTabs";
+NuTabs.displayName = 'NuTabs';
 
 /** NuTabs のサブコンポーネント */
 export const NuTabsList = MantineTabs.List;

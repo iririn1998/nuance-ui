@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuSegmentedControl } from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { NuSegmentedControl } from '.';
 
 const meta: Meta<typeof NuSegmentedControl> = {
-  title: "Components/Navigation/SegmentedControl",
+  title: 'Components/Navigation/SegmentedControl',
   component: NuSegmentedControl,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -12,6 +13,6 @@ type Story = StoryObj<typeof NuSegmentedControl>;
 
 export const Default: Story = {
   args: {
-    data: ["React", "Vue", "Angular", "Svelte"],
+    data: ['React', 'Vue', 'Angular', 'Svelte'],
   },
 };

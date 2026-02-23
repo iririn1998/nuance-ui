@@ -10,11 +10,10 @@
   border-radius: var(--mantine-radius-lg);
   box-shadow:
     var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
 }
 
-:global([data-mantine-color-scheme="dark"]) .content {
+:global([data-mantine-color-scheme='dark']) .content {
   --neu-bg-base: #2d3436;
   --neu-shadow-dark: rgba(0, 0, 0, 0.5);
   --neu-shadow-light: rgba(255, 255, 255, 0.05);
@@ -39,22 +38,19 @@
   border-radius: var(--mantine-radius-sm);
   box-shadow:
     var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
   transition: box-shadow 0.15s ease;
 }
 
 .close:hover {
   box-shadow:
-    calc(var(--neu-distance) + 1px) calc(var(--neu-distance) + 1px)
-      calc(var(--neu-blur) + 2px) var(--neu-shadow-dark),
-    calc(-1 * (var(--neu-distance) + 1px)) calc(-1 * (var(--neu-distance) + 1px))
-      calc(var(--neu-blur) + 2px) var(--neu-shadow-light);
+    calc(var(--neu-distance) + 1px) calc(var(--neu-distance) + 1px) calc(var(--neu-blur) + 2px) var(--neu-shadow-dark),
+    calc(-1 * (var(--neu-distance) + 1px)) calc(-1 * (var(--neu-distance) + 1px)) calc(var(--neu-blur) + 2px)
+      var(--neu-shadow-light);
 }
 
 .close:active {
   box-shadow:
     inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
 }

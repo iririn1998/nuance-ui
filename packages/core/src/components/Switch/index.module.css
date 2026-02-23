@@ -6,7 +6,7 @@
   --neu-shadow-light: rgba(255, 255, 255, 0.8);
 }
 
-:global([data-mantine-color-scheme="dark"]) .root {
+:global([data-mantine-color-scheme='dark']) .root {
   --neu-bg-base: #2d3436;
   --neu-shadow-dark: rgba(0, 0, 0, 0.4);
   --neu-shadow-light: rgba(255, 255, 255, 0.05);
@@ -17,8 +17,7 @@
   border: none;
   box-shadow:
     inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
   transition: box-shadow 0.2s ease;
   overflow: visible;
 }
@@ -28,6 +27,5 @@
   border: none;
   box-shadow:
     var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
-    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
-      var(--neu-shadow-light);
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
 }

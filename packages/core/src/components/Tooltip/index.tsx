@@ -1,8 +1,6 @@
-import {
-  Tooltip as MantineTooltip,
-  type TooltipProps as MantineTooltipProps,
-} from "@mantine/core";
-import className from "./index.module.css";
+import { Tooltip as MantineTooltip, type TooltipProps as MantineTooltipProps } from '@mantine/core';
+
+import className from './index.module.css';
 
 export interface NuTooltipProps extends MantineTooltipProps {}
 
@@ -21,4 +19,4 @@ export function NuTooltip({ classNames, ...props }: NuTooltipProps) {
   );
 }
 
-NuTooltip.displayName = "NuTooltip";
+NuTooltip.displayName = 'NuTooltip';

@@ -1,8 +1,6 @@
-import {
-  Modal as MantineModal,
-  type ModalProps as MantineModalProps,
-} from "@mantine/core";
-import className from "./index.module.css";
+import { Modal as MantineModal, type ModalProps as MantineModalProps } from '@mantine/core';
+
+import className from './index.module.css';
 
 export interface NuModalProps extends MantineModalProps {}
 
@@ -24,4 +22,4 @@ export function NuModal({ classNames, ...props }: NuModalProps) {
   );
 }
 
-NuModal.displayName = "NuModal";
+NuModal.displayName = 'NuModal';

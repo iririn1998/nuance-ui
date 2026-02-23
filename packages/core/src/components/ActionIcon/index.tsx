@@ -1,13 +1,12 @@
-import { forwardRef } from "react";
-import {
-  ActionIcon as MantineActionIcon,
-  type ActionIconProps as MantineActionIconProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "./index.module.css";
+import { ActionIcon as MantineActionIcon, type ActionIconProps as MantineActionIconProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
 
-export interface NuActionIconProps extends Omit<MantineActionIconProps, "variant"> {
+import type { NeumorphismVariant } from '../../theme';
+
+import className from './index.module.css';
+
+export interface NuActionIconProps extends Omit<MantineActionIconProps, 'variant'> {
   /** ニューモーフィズムの variant */
   neuVariant?: NeumorphismVariant;
 }
@@ -16,7 +15,7 @@ export interface NuActionIconProps extends Omit<MantineActionIconProps, "variant
  * ニューモーフィズムスタイルの ActionIcon コンポーネント
  */
 export const NuActionIcon = forwardRef<HTMLButtonElement, NuActionIconProps>(
-  ({ neuVariant = "raised", className: propsClassName, ...props }, ref) => {
+  ({ neuVariant = 'raised', className: propsClassName, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -31,7 +30,7 @@ export const NuActionIcon = forwardRef<HTMLButtonElement, NuActionIconProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuActionIcon.displayName = "NuActionIcon";
+NuActionIcon.displayName = 'NuActionIcon';

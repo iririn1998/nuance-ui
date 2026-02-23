@@ -1,11 +1,10 @@
-import { forwardRef } from "react";
-import {
-  Paper as MantinePaper,
-  type PaperProps as MantinePaperProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "./index.module.css";
+import { Paper as MantinePaper, type PaperProps as MantinePaperProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from './index.module.css';
 
 export interface NuPaperProps extends MantinePaperProps {
   /** ニューモーフィズムの variant */
@@ -16,21 +15,15 @@ export interface NuPaperProps extends MantinePaperProps {
  * ニューモーフィズムスタイルの Paper コンポーネント
  */
 export const NuPaper = forwardRef<HTMLDivElement, NuPaperProps>(
-  ({ neuVariant = "raised", className: propsClassName, ...props }, ref) => {
+  ({ neuVariant = 'raised', className: propsClassName, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
       flat: className.flat,
     }[neuVariant];
 
-    return (
-      <MantinePaper
-        ref={ref}
-        className={clsx(className.root, variantClass, propsClassName)}
-        {...props}
-      />
-    );
-  }
+    return <MantinePaper ref={ref} className={clsx(className.root, variantClass, propsClassName)} {...props} />;
+  },
 );
 
-NuPaper.displayName = "NuPaper";
+NuPaper.displayName = 'NuPaper';

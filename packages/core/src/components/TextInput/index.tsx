@@ -1,11 +1,10 @@
-import { forwardRef } from "react";
-import {
-  TextInput as MantineTextInput,
-  type TextInputProps as MantineTextInputProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "./index.module.css";
+import { TextInput as MantineTextInput, type TextInputProps as MantineTextInputProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from './index.module.css';
 
 export interface NuTextInputProps extends MantineTextInputProps {
   /** ニューモーフィズムの variant */
@@ -16,7 +15,7 @@ export interface NuTextInputProps extends MantineTextInputProps {
  * ニューモーフィズムスタイルの TextInput コンポーネント
  */
 export const NuTextInput = forwardRef<HTMLInputElement, NuTextInputProps>(
-  ({ neuVariant = "inset", className: propsClassName, classNames, ...props }, ref) => {
+  ({ neuVariant = 'inset', className: propsClassName, classNames, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -34,7 +33,7 @@ export const NuTextInput = forwardRef<HTMLInputElement, NuTextInputProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuTextInput.displayName = "NuTextInput";
+NuTextInput.displayName = 'NuTextInput';

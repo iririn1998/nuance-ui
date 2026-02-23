@@ -1,10 +1,11 @@
-import { forwardRef } from "react";
 import {
   SegmentedControl as MantineSegmentedControl,
   type SegmentedControlProps as MantineSegmentedControlProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+} from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuSegmentedControlProps extends MantineSegmentedControlProps {}
 
@@ -25,7 +26,7 @@ export const NuSegmentedControl = forwardRef<HTMLDivElement, NuSegmentedControlP
         {...props}
       />
     );
-  }
+  },
 );
 
-NuSegmentedControl.displayName = "NuSegmentedControl";
+NuSegmentedControl.displayName = 'NuSegmentedControl';

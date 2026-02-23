@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuDrawer } from ".";
-import { NuButton } from "../Button";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React, { useState } from 'react';
+
+import { NuDrawer } from '.';
+import { NuButton } from '../Button';
 
 const meta: Meta<typeof NuDrawer> = {
-  title: "Components/Overlays/Drawer",
+  title: 'Components/Overlays/Drawer',
   component: NuDrawer,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;

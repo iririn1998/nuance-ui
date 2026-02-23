@@ -1,19 +1,20 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuCard } from ".";
-import { NuButton } from "../Button";
-import { NuGroup } from "../Group";
-import { NuBadge } from "../Badge";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuCard } from '.';
+import { NuBadge } from '../Badge';
+import { NuButton } from '../Button';
+import { NuGroup } from '../Group';
 
 const meta: Meta<typeof NuCard> = {
-  title: "Components/Layout/Card",
+  title: 'Components/Layout/Card',
   component: NuCard,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     neuVariant: {
-      control: "select",
-      options: ["raised", "inset", "flat"],
+      control: 'select',
+      options: ['raised', 'inset', 'flat'],
     },
   },
 };
@@ -28,8 +29,8 @@ export const Raised: Story = {
         Neumorphism Card
       </Text>
       <Text size="sm" c="dimmed">
-        This card demonstrates the raised neumorphism style with soft shadows
-        that make the element appear to float above the surface.
+        This card demonstrates the raised neumorphism style with soft shadows that make the element appear to float
+        above the surface.
       </Text>
       <NuButton neuVariant="raised" fullWidth mt="md">
         Action
@@ -55,15 +56,21 @@ export const AllVariants: Story = {
   render: () => (
     <NuGroup>
       <NuCard neuVariant="raised" w={240} padding="lg" radius="md">
-        <NuBadge neuVariant="raised" mb="sm">Raised</NuBadge>
+        <NuBadge neuVariant="raised" mb="sm">
+          Raised
+        </NuBadge>
         <Text size="sm">Floating above the surface</Text>
       </NuCard>
       <NuCard neuVariant="inset" w={240} padding="lg" radius="md">
-        <NuBadge neuVariant="inset" mb="sm">Inset</NuBadge>
+        <NuBadge neuVariant="inset" mb="sm">
+          Inset
+        </NuBadge>
         <Text size="sm">Pressed into the surface</Text>
       </NuCard>
       <NuCard neuVariant="flat" w={240} padding="lg" radius="md">
-        <NuBadge neuVariant="flat" mb="sm">Flat</NuBadge>
+        <NuBadge neuVariant="flat" mb="sm">
+          Flat
+        </NuBadge>
         <Text size="sm">Flat on the surface</Text>
       </NuCard>
     </NuGroup>

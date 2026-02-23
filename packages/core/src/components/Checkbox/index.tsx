@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-import {
-  Checkbox as MantineCheckbox,
-  type CheckboxProps as MantineCheckboxProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+import { Checkbox as MantineCheckbox, type CheckboxProps as MantineCheckboxProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuCheckboxProps extends MantineCheckboxProps {}
 
@@ -24,7 +22,7 @@ export const NuCheckbox = forwardRef<HTMLInputElement, NuCheckboxProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuCheckbox.displayName = "NuCheckbox";
+NuCheckbox.displayName = 'NuCheckbox';

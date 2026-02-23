@@ -1,11 +1,10 @@
-import { forwardRef } from "react";
-import {
-  MultiSelect as MantineMultiSelect,
-  type MultiSelectProps as MantineMultiSelectProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "../TextInput/index.module.css";
+import { MultiSelect as MantineMultiSelect, type MultiSelectProps as MantineMultiSelectProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from '../TextInput/index.module.css';
 
 export interface NuMultiSelectProps extends MantineMultiSelectProps {
   /** ニューモーフィズムの variant */
@@ -16,7 +15,7 @@ export interface NuMultiSelectProps extends MantineMultiSelectProps {
  * ニューモーフィズムスタイルの MultiSelect コンポーネント
  */
 export const NuMultiSelect = forwardRef<HTMLInputElement, NuMultiSelectProps>(
-  ({ neuVariant = "inset", className: propsClassName, classNames, ...props }, ref) => {
+  ({ neuVariant = 'inset', className: propsClassName, classNames, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -34,7 +33,7 @@ export const NuMultiSelect = forwardRef<HTMLInputElement, NuMultiSelectProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuMultiSelect.displayName = "NuMultiSelect";
+NuMultiSelect.displayName = 'NuMultiSelect';

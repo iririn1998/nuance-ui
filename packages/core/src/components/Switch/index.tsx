@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-import {
-  Switch as MantineSwitch,
-  type SwitchProps as MantineSwitchProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+import { Switch as MantineSwitch, type SwitchProps as MantineSwitchProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuSwitchProps extends MantineSwitchProps {}
 
@@ -25,7 +23,7 @@ export const NuSwitch = forwardRef<HTMLInputElement, NuSwitchProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuSwitch.displayName = "NuSwitch";
+NuSwitch.displayName = 'NuSwitch';

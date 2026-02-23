@@ -1,8 +1,6 @@
-import {
-  Drawer as MantineDrawer,
-  type DrawerProps as MantineDrawerProps,
-} from "@mantine/core";
-import className from "./index.module.css";
+import { Drawer as MantineDrawer, type DrawerProps as MantineDrawerProps } from '@mantine/core';
+
+import className from './index.module.css';
 
 export interface NuDrawerProps extends MantineDrawerProps {}
 
@@ -24,4 +22,4 @@ export function NuDrawer({ classNames, ...props }: NuDrawerProps) {
   );
 }
 
-NuDrawer.displayName = "NuDrawer";
+NuDrawer.displayName = 'NuDrawer';

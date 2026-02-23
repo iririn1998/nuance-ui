@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-import {
-  Slider as MantineSlider,
-  type SliderProps as MantineSliderProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+import { Slider as MantineSlider, type SliderProps as MantineSliderProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuSliderProps extends MantineSliderProps {}
 
@@ -25,7 +23,7 @@ export const NuSlider = forwardRef<HTMLDivElement, NuSliderProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuSlider.displayName = "NuSlider";
+NuSlider.displayName = 'NuSlider';

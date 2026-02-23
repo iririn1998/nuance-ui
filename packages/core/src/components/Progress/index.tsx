@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-import {
-  Progress as MantineProgress,
-  type ProgressProps as MantineProgressProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+import { Progress as MantineProgress, type ProgressProps as MantineProgressProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuProgressProps extends MantineProgressProps {}
 
@@ -24,7 +22,7 @@ export const NuProgress = forwardRef<HTMLDivElement, NuProgressProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuProgress.displayName = "NuProgress";
+NuProgress.displayName = 'NuProgress';
