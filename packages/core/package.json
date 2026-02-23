@@ -31,6 +31,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
+    "fmt": "oxfmt -c node_modules/@nuance-ui/config/src/oxfmt/base.json src",
+    "fmt:check": "oxfmt -c node_modules/@nuance-ui/config/src/oxfmt/base.json --check src",
     "lint": "NODE_OPTIONS='--experimental-strip-types --no-warnings' oxlint src",
     "lint:fix": "NODE_OPTIONS='--experimental-strip-types --no-warnings' oxlint src --fix"
   },
@@ -53,6 +55,7 @@
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "jsdom": "^25.0.0",
+    "oxfmt": "^0.34.0",
     "oxlint": "^1.49.0",
     "postcss": "^8.4.0",
     "postcss-preset-mantine": "^1.17.0",

@@ -4,13 +4,19 @@
   "private": true,
   "type": "module",
   "description": "Shared configurations for nuance-ui monorepo",
+  "scripts": {
+    "fmt": "oxfmt -c src/oxfmt/base.json src",
+    "fmt:check": "oxfmt -c src/oxfmt/base.json --check src"
+  },
   "exports": {
     "./oxlint": {
       "import": "./src/oxlint/index.ts",
       "require": "./src/oxlint/index.ts"
-    }
+    },
+    "./oxfmt": "./src/oxfmt/base.json"
   },
   "devDependencies": {
+    "oxfmt": "^0.34.0",
     "oxlint": "^1.49.0",
     "typescript": "^5.5.0"
   }
