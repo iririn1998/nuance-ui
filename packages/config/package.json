@@ -15,7 +15,11 @@
     },
     "./oxfmt": "./src/oxfmt/base.json",
     "./storybook/main": "./src/storybook/main.ts",
-    "./storybook/preview": "./src/storybook/preview.tsx"
+    "./storybook/preview": "./src/storybook/preview.tsx",
+    "./vitest": {
+      "types": "./src/vitest/index.d.ts",
+      "default": "./src/vitest/index.js"
+    }
   },
   "devDependencies": {
     "@mantine/core": "^7.15.0",
@@ -25,10 +29,12 @@
     "@storybook/react": "^8.4.0",
     "@storybook/react-vite": "^8.4.0",
     "@types/react": "^18.3.0",
+    "happy-dom": "^20.7.0",
     "oxfmt": "^0.34.0",
     "oxlint": "^1.49.0",
     "react": "^18.3.0",
     "typescript": "^5.5.0",
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "vitest": "^2.1.0"
   }
 }
