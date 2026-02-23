@@ -51,6 +51,6 @@ export function createStorybookVitestProject(
         provider: "playwright",
       },
       setupFiles: [`${storybookConfigDir}/vitest.setup.ts`],
-    } as InlineConfig,
+    },
   };
 }
