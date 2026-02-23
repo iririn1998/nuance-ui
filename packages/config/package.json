@@ -1,0 +1,17 @@
+{
+  "name": "@nuance-ui/config",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Shared configurations for nuance-ui monorepo",
+  "exports": {
+    "./oxlint": {
+      "import": "./src/oxlint/index.ts",
+      "require": "./src/oxlint/index.ts"
+    }
+  },
+  "devDependencies": {
+    "oxlint": "^1.49.0",
+    "typescript": "^5.5.0"
+  }
+}

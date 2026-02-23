@@ -30,7 +30,9 @@
     "dev": "tsdown --watch",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "NODE_OPTIONS='--experimental-strip-types --no-warnings' oxlint src",
+    "lint:fix": "NODE_OPTIONS='--experimental-strip-types --no-warnings' oxlint src --fix"
   },
   "dependencies": {
     "clsx": "^2.1.1"
@@ -42,6 +44,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@nuance-ui/config": "workspace:*",
     "@mantine/core": "^7.15.0",
     "@mantine/hooks": "^7.15.0",
     "@testing-library/jest-dom": "^6.6.0",
@@ -50,11 +53,13 @@
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "jsdom": "^25.0.0",
+    "oxlint": "^1.49.0",
     "postcss": "^8.4.0",
     "postcss-preset-mantine": "^1.17.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "tsdown": "^0.20.3",
+    "tsx": "^4.21.0",
     "typescript": "^5.5.0",
     "vitest": "^2.1.0"
   },
