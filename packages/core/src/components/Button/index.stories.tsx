@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { NuButton } from '.';
+
+// クリックハンドラーのモック（play 関数内で spy として参照する）
+const onClickMock = fn();
 
 const meta: Meta<typeof NuButton> = {
   title: 'Components/Buttons/Button',
   component: NuButton,
   tags: ['autodocs'],
+  beforeEach: () => {
+    onClickMock.mockClear();
+  },
   argTypes: {
     neuVariant: {
       control: 'select',
@@ -43,6 +50,19 @@ export const Raised: Story = {
     children: 'Raised Button',
     neuVariant: 'raised',
     size: 'md',
+    onClick: onClickMock,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: 'Raised Button' });
+
+    // ボタンが表示されており、クリック可能であることを確認する
+    await expect(button).toBeVisible();
+    await expect(button).not.toBeDisabled();
+
+    // クリックイベントが発火されることを確認する
+    await userEvent.click(button);
+    await expect(onClickMock).toHaveBeenCalledOnce();
   },
 };
 
@@ -52,6 +72,14 @@ export const Inset: Story = {
     children: 'Inset Button',
     neuVariant: 'inset',
     size: 'md',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: 'Inset Button' });
+
+    // inset variant のクラスが付与されているか確認する
+    await expect(button).toBeVisible();
+    await expect(button.className).toContain('inset');
   },
 };
 
@@ -70,6 +98,16 @@ export const Disabled: Story = {
     children: 'Disabled Button',
     neuVariant: 'raised',
     disabled: true,
+    onClick: onClickMock,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: 'Disabled Button' });
+
+    // disabled 状態のボタンはクリックできないことを確認する
+    await expect(button).toBeDisabled();
+    await userEvent.click(button, { pointerEventsCheck: 0 });
+    await expect(onClickMock).not.toHaveBeenCalled();
   },
 };
 
