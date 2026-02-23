@@ -2,7 +2,6 @@ import { defineConfig, type OxlintConfig } from "oxlint";
 
 /**
  * Base oxlint configuration for nuance-ui packages.
- * Targets React + TypeScript component library development.
  */
 const baseConfig: OxlintConfig = defineConfig({
   plugins: ["typescript", "react", "import"],
