@@ -2,7 +2,6 @@ import { mergeConfig, defineConfig } from 'vitest/config';
 
 /**
  * Base vitest configuration for nuance-ui packages.
- * Provides sensible defaults for React component testing with jsdom.
  */
 export const baseConfig = defineConfig({
   test: {
