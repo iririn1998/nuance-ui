@@ -16,6 +16,10 @@
     "./oxfmt": "./src/oxfmt/base.json",
     "./storybook/main": "./src/storybook/main.ts",
     "./storybook/preview": "./src/storybook/preview.tsx",
+    "./storybook/vitest-plugin": {
+      "types": "./src/storybook/vitest-plugin.ts",
+      "default": "./src/storybook/vitest-plugin.js"
+    },
     "./vitest": {
       "types": "./src/vitest/index.d.ts",
       "default": "./src/vitest/index.js"
@@ -23,11 +27,12 @@
   },
   "devDependencies": {
     "@mantine/core": "^7.15.0",
-    "@storybook/addon-essentials": "^8.4.0",
-    "@storybook/addon-interactions": "^8.4.0",
-    "@storybook/addon-links": "^8.4.0",
-    "@storybook/react": "^8.4.0",
-    "@storybook/react-vite": "^8.4.0",
+    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/addon-interactions": "^8.6.0",
+    "@storybook/addon-links": "^8.6.0",
+    "@storybook/experimental-addon-test": "^8.6.0",
+    "@storybook/react": "^8.6.0",
+    "@storybook/react-vite": "^8.6.0",
     "@types/react": "^18.3.0",
     "happy-dom": "^20.7.0",
     "oxfmt": "^0.34.0",

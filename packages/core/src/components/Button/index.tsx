@@ -1,6 +1,6 @@
 import { Button as MantineButton, type ButtonProps as MantineButtonProps } from '@mantine/core';
 import clsx from 'clsx';
-import { forwardRef } from 'react';
+import { forwardRef, type MouseEventHandler } from 'react';
 
 import type { NeumorphismVariant } from '../../theme';
 
@@ -9,6 +9,7 @@ import className from './index.module.css';
 export interface NuButtonProps extends Omit<MantineButtonProps, 'variant'> {
   /** ニューモーフィズムの variant */
   neuVariant?: NeumorphismVariant;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 /**
