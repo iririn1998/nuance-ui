@@ -1,16 +1,17 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuAlert } from ".";
-import { NuStack } from "../Stack";
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuAlert } from '.';
+import { NuStack } from '../Stack';
 
 const meta: Meta<typeof NuAlert> = {
-  title: "Components/Feedback/Alert",
+  title: 'Components/Feedback/Alert',
   component: NuAlert,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     neuVariant: {
-      control: "select",
-      options: ["raised", "inset", "flat"],
+      control: 'select',
+      options: ['raised', 'inset', 'flat'],
     },
   },
 };
@@ -20,9 +21,9 @@ type Story = StoryObj<typeof NuAlert>;
 
 export const Default: Story = {
   args: {
-    title: "Information",
-    children: "This is an informational alert with neumorphism styling.",
-    neuVariant: "raised",
+    title: 'Information',
+    children: 'This is an informational alert with neumorphism styling.',
+    neuVariant: 'raised',
   },
 };
 

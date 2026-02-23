@@ -1,13 +1,14 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuDivider } from ".";
-import { NuStack } from "../Stack";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuDivider } from '.';
+import { NuStack } from '../Stack';
 
 const meta: Meta<typeof NuDivider> = {
-  title: "Components/Layout/Divider",
+  title: 'Components/Layout/Divider',
   component: NuDivider,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;

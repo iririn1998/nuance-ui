@@ -1,12 +1,13 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuSkeleton } from ".";
-import { NuStack } from "../Stack";
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuSkeleton } from '.';
+import { NuStack } from '../Stack';
 
 const meta: Meta<typeof NuSkeleton> = {
-  title: "Components/Feedback/Skeleton",
+  title: 'Components/Feedback/Skeleton',
   component: NuSkeleton,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;

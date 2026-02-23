@@ -1,13 +1,12 @@
-import { forwardRef } from "react";
-import {
-  Button as MantineButton,
-  type ButtonProps as MantineButtonProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "./index.module.css";
+import { Button as MantineButton, type ButtonProps as MantineButtonProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
 
-export interface NuButtonProps extends Omit<MantineButtonProps, "variant"> {
+import type { NeumorphismVariant } from '../../theme';
+
+import className from './index.module.css';
+
+export interface NuButtonProps extends Omit<MantineButtonProps, 'variant'> {
   /** ニューモーフィズムの variant */
   neuVariant?: NeumorphismVariant;
 }
@@ -19,14 +18,15 @@ export interface NuButtonProps extends Omit<MantineButtonProps, "variant"> {
  * raised (凸) / inset (凹) / flat スタイルを適用します。
  */
 export const NuButton = forwardRef<HTMLButtonElement, NuButtonProps>(
-  ({ neuVariant = "raised", className: propsClassName, size = "md", ...props }, ref) => {
-    const sizeClass = {
-      xs: className.sizeXs,
-      sm: className.sizeSm,
-      md: className.sizeMd,
-      lg: className.sizeLg,
-      xl: className.sizeXl,
-    }[size as string] ?? className.sizeMd;
+  ({ neuVariant = 'raised', className: propsClassName, size = 'md', ...props }, ref) => {
+    const sizeClass =
+      {
+        xs: className.sizeXs,
+        sm: className.sizeSm,
+        md: className.sizeMd,
+        lg: className.sizeLg,
+        xl: className.sizeXl,
+      }[size as string] ?? className.sizeMd;
 
     const variantClass = {
       raised: className.raised,
@@ -36,16 +36,8 @@ export const NuButton = forwardRef<HTMLButtonElement, NuButtonProps>(
 
     const combinedClassName = clsx(className.root, variantClass, sizeClass, propsClassName);
 
-    return (
-      <MantineButton
-        ref={ref}
-        variant="default"
-        size={size}
-        className={combinedClassName}
-        {...props}
-      />
-    );
-  }
+    return <MantineButton ref={ref} variant="default" size={size} className={combinedClassName} {...props} />;
+  },
 );
 
-NuButton.displayName = "NuButton";
+NuButton.displayName = 'NuButton';

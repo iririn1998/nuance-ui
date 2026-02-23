@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuCheckbox } from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { NuCheckbox } from '.';
 
 const meta: Meta<typeof NuCheckbox> = {
-  title: "Components/Inputs/Checkbox",
+  title: 'Components/Inputs/Checkbox',
   component: NuCheckbox,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -12,13 +13,13 @@ type Story = StoryObj<typeof NuCheckbox>;
 
 export const Default: Story = {
   args: {
-    label: "I agree to the terms",
+    label: 'I agree to the terms',
   },
 };
 
 export const Checked: Story = {
   args: {
-    label: "Checked by default",
+    label: 'Checked by default',
     defaultChecked: true,
   },
 };

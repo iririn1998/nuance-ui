@@ -5,25 +5,17 @@
 
   border: none;
   height: 2px;
-  background: linear-gradient(
-    to right,
-    var(--neu-shadow-dark),
-    var(--neu-shadow-light)
-  );
+  background: linear-gradient(to right, var(--neu-shadow-dark), var(--neu-shadow-light));
 }
 
-:global([data-mantine-color-scheme="dark"]) .root {
+:global([data-mantine-color-scheme='dark']) .root {
   --neu-shadow-dark: rgba(0, 0, 0, 0.4);
   --neu-shadow-light: rgba(255, 255, 255, 0.05);
 }
 
 /* Vertical orientation */
-.root[data-orientation="vertical"] {
+.root[data-orientation='vertical'] {
   height: auto;
   width: 2px;
-  background: linear-gradient(
-    to bottom,
-    var(--neu-shadow-dark),
-    var(--neu-shadow-light)
-  );
+  background: linear-gradient(to bottom, var(--neu-shadow-dark), var(--neu-shadow-light));
 }

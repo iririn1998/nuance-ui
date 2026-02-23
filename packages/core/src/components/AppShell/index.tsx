@@ -1,13 +1,14 @@
-import React from "react";
 import {
   AppShell as MantineAppShell,
   type AppShellProps as MantineAppShellProps,
   type AppShellSectionProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+} from '@mantine/core';
+import clsx from 'clsx';
+import React from 'react';
 
-export interface NuAppShellProps extends MantineAppShellProps { }
+import className from './index.module.css';
+
+export interface NuAppShellProps extends MantineAppShellProps {}
 
 /**
  * ニューモーフィズムスタイルの AppShell コンポーネント
@@ -28,7 +29,7 @@ export function NuAppShell({ className: propsClassName, classNames, ...props }: 
   );
 }
 
-NuAppShell.displayName = "NuAppShell";
+NuAppShell.displayName = 'NuAppShell';
 
 /** NuAppShell のサブコンポーネント */
 export const NuAppShellHeader = MantineAppShell.Header;

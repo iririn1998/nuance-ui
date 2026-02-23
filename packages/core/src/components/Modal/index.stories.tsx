@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuModal } from ".";
-import { NuButton } from "../Button";
-import { NuTextInput } from "../TextInput";
-import { NuGroup } from "../Group";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React, { useState } from 'react';
+
+import { NuModal } from '.';
+import { NuButton } from '../Button';
+import { NuGroup } from '../Group';
+import { NuTextInput } from '../TextInput';
 
 const meta: Meta<typeof NuModal> = {
-  title: "Components/Overlays/Modal",
+  title: 'Components/Overlays/Modal',
   component: NuModal,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -26,7 +27,9 @@ function ModalDemo() {
         </Text>
         <NuTextInput label="Name" placeholder="Enter your name" mb="md" />
         <NuGroup justify="flex-end">
-          <NuButton neuVariant="flat" onClick={() => setOpened(false)}>Cancel</NuButton>
+          <NuButton neuVariant="flat" onClick={() => setOpened(false)}>
+            Cancel
+          </NuButton>
           <NuButton onClick={() => setOpened(false)}>Submit</NuButton>
         </NuGroup>
       </NuModal>

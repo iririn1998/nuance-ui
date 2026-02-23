@@ -1,12 +1,13 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuTooltip } from ".";
-import { NuButton } from "../Button";
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuTooltip } from '.';
+import { NuButton } from '../Button';
 
 const meta: Meta<typeof NuTooltip> = {
-  title: "Components/Overlays/Tooltip",
+  title: 'Components/Overlays/Tooltip',
   component: NuTooltip,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;

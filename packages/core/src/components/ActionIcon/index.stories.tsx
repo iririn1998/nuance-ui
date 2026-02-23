@@ -1,16 +1,17 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuActionIcon } from ".";
-import { NuGroup } from "../Group";
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuActionIcon } from '.';
+import { NuGroup } from '../Group';
 
 const meta: Meta<typeof NuActionIcon> = {
-  title: "Components/Buttons/ActionIcon",
+  title: 'Components/Buttons/ActionIcon',
   component: NuActionIcon,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     neuVariant: {
-      control: "select",
-      options: ["raised", "inset", "flat"],
+      control: 'select',
+      options: ['raised', 'inset', 'flat'],
     },
   },
 };
@@ -20,18 +21,24 @@ type Story = StoryObj<typeof NuActionIcon>;
 
 export const Default: Story = {
   args: {
-    neuVariant: "raised",
-    size: "lg",
-    children: "★",
+    neuVariant: 'raised',
+    size: 'lg',
+    children: '★',
   },
 };
 
 export const AllVariants: Story = {
   render: () => (
     <NuGroup>
-      <NuActionIcon neuVariant="raised" size="lg">★</NuActionIcon>
-      <NuActionIcon neuVariant="inset" size="lg">♥</NuActionIcon>
-      <NuActionIcon neuVariant="flat" size="lg">✎</NuActionIcon>
+      <NuActionIcon neuVariant="raised" size="lg">
+        ★
+      </NuActionIcon>
+      <NuActionIcon neuVariant="inset" size="lg">
+        ♥
+      </NuActionIcon>
+      <NuActionIcon neuVariant="flat" size="lg">
+        ✎
+      </NuActionIcon>
     </NuGroup>
   ),
 };

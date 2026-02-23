@@ -1,12 +1,13 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuTabs, NuTabsList, NuTabsTab, NuTabsPanel } from ".";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuTabs, NuTabsList, NuTabsTab, NuTabsPanel } from '.';
 
 const meta: Meta<typeof NuTabs> = {
-  title: "Components/Navigation/Tabs",
+  title: 'Components/Navigation/Tabs',
   component: NuTabs,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default meta;

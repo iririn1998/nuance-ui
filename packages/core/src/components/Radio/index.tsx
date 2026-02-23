@@ -1,11 +1,12 @@
-import { forwardRef } from "react";
 import {
   Radio as MantineRadio,
   type RadioProps as MantineRadioProps,
   type RadioGroupProps as MantineRadioGroupProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+} from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuRadioProps extends MantineRadioProps {}
 
@@ -25,10 +26,10 @@ export const NuRadio = forwardRef<HTMLInputElement, NuRadioProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuRadio.displayName = "NuRadio";
+NuRadio.displayName = 'NuRadio';
 
 export interface NuRadioGroupProps extends MantineRadioGroupProps {}
 

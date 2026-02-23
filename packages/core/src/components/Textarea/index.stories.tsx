@@ -1,14 +1,15 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuTextarea } from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { NuTextarea } from '.';
 
 const meta: Meta<typeof NuTextarea> = {
-  title: "Components/Inputs/Textarea",
+  title: 'Components/Inputs/Textarea',
   component: NuTextarea,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     neuVariant: {
-      control: "select",
-      options: ["raised", "inset", "flat"],
+      control: 'select',
+      options: ['raised', 'inset', 'flat'],
     },
   },
 };
@@ -18,9 +19,9 @@ type Story = StoryObj<typeof NuTextarea>;
 
 export const Default: Story = {
   args: {
-    label: "Comment",
-    placeholder: "Write your comment...",
-    neuVariant: "inset",
+    label: 'Comment',
+    placeholder: 'Write your comment...',
+    neuVariant: 'inset',
     rows: 4,
   },
 };

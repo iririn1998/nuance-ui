@@ -1,11 +1,10 @@
-import { forwardRef } from "react";
-import {
-  Alert as MantineAlert,
-  type AlertProps as MantineAlertProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "./index.module.css";
+import { Alert as MantineAlert, type AlertProps as MantineAlertProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from './index.module.css';
 
 export interface NuAlertProps extends MantineAlertProps {
   /** ニューモーフィズムの variant */
@@ -16,7 +15,7 @@ export interface NuAlertProps extends MantineAlertProps {
  * ニューモーフィズムスタイルの Alert コンポーネント
  */
 export const NuAlert = forwardRef<HTMLDivElement, NuAlertProps>(
-  ({ neuVariant = "raised", className: propsClassName, ...props }, ref) => {
+  ({ neuVariant = 'raised', className: propsClassName, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -31,7 +30,7 @@ export const NuAlert = forwardRef<HTMLDivElement, NuAlertProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuAlert.displayName = "NuAlert";
+NuAlert.displayName = 'NuAlert';

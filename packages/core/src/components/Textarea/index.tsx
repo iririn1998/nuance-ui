@@ -1,11 +1,10 @@
-import { forwardRef } from "react";
-import {
-  Textarea as MantineTextarea,
-  type TextareaProps as MantineTextareaProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "../TextInput/index.module.css";
+import { Textarea as MantineTextarea, type TextareaProps as MantineTextareaProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from '../TextInput/index.module.css';
 
 export interface NuTextareaProps extends MantineTextareaProps {
   /** ニューモーフィズムの variant */
@@ -16,7 +15,7 @@ export interface NuTextareaProps extends MantineTextareaProps {
  * ニューモーフィズムスタイルの Textarea コンポーネント
  */
 export const NuTextarea = forwardRef<HTMLTextAreaElement, NuTextareaProps>(
-  ({ neuVariant = "inset", className: propsClassName, classNames, ...props }, ref) => {
+  ({ neuVariant = 'inset', className: propsClassName, classNames, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -34,7 +33,7 @@ export const NuTextarea = forwardRef<HTMLTextAreaElement, NuTextareaProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuTextarea.displayName = "NuTextarea";
+NuTextarea.displayName = 'NuTextarea';

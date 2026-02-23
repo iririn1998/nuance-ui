@@ -1,11 +1,13 @@
-import { forwardRef } from "react";
 import {
   PasswordInput as MantinePasswordInput,
   type PasswordInputProps as MantinePasswordInputProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import type { NeumorphismVariant } from "../../theme";
-import className from "../TextInput/index.module.css";
+} from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import type { NeumorphismVariant } from '../../theme';
+
+import className from '../TextInput/index.module.css';
 
 export interface NuPasswordInputProps extends MantinePasswordInputProps {
   /** ニューモーフィズムの variant */
@@ -16,7 +18,7 @@ export interface NuPasswordInputProps extends MantinePasswordInputProps {
  * ニューモーフィズムスタイルの PasswordInput コンポーネント
  */
 export const NuPasswordInput = forwardRef<HTMLInputElement, NuPasswordInputProps>(
-  ({ neuVariant = "inset", className: propsClassName, classNames, ...props }, ref) => {
+  ({ neuVariant = 'inset', className: propsClassName, classNames, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
       inset: className.inset,
@@ -34,7 +36,7 @@ export const NuPasswordInput = forwardRef<HTMLInputElement, NuPasswordInputProps
         {...props}
       />
     );
-  }
+  },
 );
 
-NuPasswordInput.displayName = "NuPasswordInput";
+NuPasswordInput.displayName = 'NuPasswordInput';

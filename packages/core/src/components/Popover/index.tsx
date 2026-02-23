@@ -1,8 +1,6 @@
-import {
-  Popover as MantinePopover,
-  type PopoverProps as MantinePopoverProps,
-} from "@mantine/core";
-import className from "./index.module.css";
+import { Popover as MantinePopover, type PopoverProps as MantinePopoverProps } from '@mantine/core';
+
+import className from './index.module.css';
 
 export interface NuPopoverProps extends MantinePopoverProps {}
 
@@ -21,7 +19,7 @@ export function NuPopover({ classNames, ...props }: NuPopoverProps) {
   );
 }
 
-NuPopover.displayName = "NuPopover";
+NuPopover.displayName = 'NuPopover';
 
 /** NuPopover のサブコンポーネント */
 export const NuPopoverTarget = MantinePopover.Target;

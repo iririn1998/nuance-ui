@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-import {
-  Notification as MantineNotification,
-  type NotificationProps as MantineNotificationProps,
-} from "@mantine/core";
-import clsx from "clsx";
-import className from "./index.module.css";
+import { Notification as MantineNotification, type NotificationProps as MantineNotificationProps } from '@mantine/core';
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+
+import className from './index.module.css';
 
 export interface NuNotificationProps extends MantineNotificationProps {}
 
@@ -24,7 +22,7 @@ export const NuNotification = forwardRef<HTMLDivElement, NuNotificationProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NuNotification.displayName = "NuNotification";
+NuNotification.displayName = 'NuNotification';

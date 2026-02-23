@@ -4,4 +4,4 @@ export {
   neumorphismDefaults,
   getNeumorphismShadow,
   type NeumorphismVariant,
-} from "./neumorphism";
+} from './neumorphism';

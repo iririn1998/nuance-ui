@@ -1,16 +1,17 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuBadge } from ".";
-import { NuGroup } from "../Group";
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuBadge } from '.';
+import { NuGroup } from '../Group';
 
 const meta: Meta<typeof NuBadge> = {
-  title: "Components/DataDisplay/Badge",
+  title: 'Components/DataDisplay/Badge',
   component: NuBadge,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     neuVariant: {
-      control: "select",
-      options: ["raised", "inset", "flat"],
+      control: 'select',
+      options: ['raised', 'inset', 'flat'],
     },
   },
 };
@@ -20,8 +21,8 @@ type Story = StoryObj<typeof NuBadge>;
 
 export const Default: Story = {
   args: {
-    children: "Badge",
-    neuVariant: "raised",
+    children: 'Badge',
+    neuVariant: 'raised',
   },
 };
 

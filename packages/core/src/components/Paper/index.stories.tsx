@@ -1,16 +1,17 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { NuPaper } from ".";
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { NuPaper } from '.';
 
 const meta: Meta<typeof NuPaper> = {
-  title: "Components/Layout/Paper",
+  title: 'Components/Layout/Paper',
   component: NuPaper,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     neuVariant: {
-      control: "select",
-      options: ["raised", "inset", "flat"],
+      control: 'select',
+      options: ['raised', 'inset', 'flat'],
     },
   },
 };
