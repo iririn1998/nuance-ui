@@ -23,6 +23,9 @@ importers:
       '@mantine/hooks':
         specifier: ^7.15.0
         version: 7.17.8(react@18.3.1)
+      '@nuance-ui/config':
+        specifier: workspace:*
+        version: link:../../packages/config
       '@storybook/addon-essentials':
         specifier: ^8.4.0
         version: 8.6.14(@types/react@18.3.28)(storybook@8.6.15(prettier@2.8.8))
@@ -68,15 +71,42 @@ importers:
 
   packages/config:
     devDependencies:
+      '@mantine/core':
+        specifier: ^7.15.0
+        version: 7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/addon-essentials':
+        specifier: ^8.4.0
+        version: 8.6.14(@types/react@18.3.28)(storybook@8.6.15(prettier@2.8.8))
+      '@storybook/addon-interactions':
+        specifier: ^8.4.0
+        version: 8.6.14(storybook@8.6.15(prettier@2.8.8))
+      '@storybook/addon-links':
+        specifier: ^8.4.0
+        version: 8.6.15(react@18.3.1)(storybook@8.6.15(prettier@2.8.8))
+      '@storybook/react':
+        specifier: ^8.4.0
+        version: 8.6.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.15(prettier@2.8.8))(typescript@5.9.3)
+      '@storybook/react-vite':
+        specifier: ^8.4.0
+        version: 8.6.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.57.1)(storybook@8.6.15(prettier@2.8.8))(typescript@5.9.3)(vite@6.4.1(sugarss@5.0.1(postcss@8.5.6))(tsx@4.21.0))
+      '@types/react':
+        specifier: ^18.3.0
+        version: 18.3.28
       oxfmt:
         specifier: ^0.34.0
         version: 0.34.0
       oxlint:
         specifier: ^1.49.0
         version: 1.49.0
+      react:
+        specifier: ^18.3.0
+        version: 18.3.1
       typescript:
         specifier: ^5.5.0
         version: 5.9.3
+      vite:
+        specifier: ^6.0.0
+        version: 6.4.1(sugarss@5.0.1(postcss@8.5.6))(tsx@4.21.0)
 
   packages/core:
     dependencies:
