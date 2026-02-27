@@ -15,6 +15,15 @@
   color: var(--mantine-color-text);
 }
 
+/* Hover background override to prevent Mantine from lightening */
+.root:hover {
+  background-color: #d5dae2;
+}
+
+:global([data-mantine-color-scheme='dark']) .root:hover {
+  background-color: #363d3f;
+}
+
 /* Dark mode overrides */
 :global([data-mantine-color-scheme='dark']) .root {
   --neu-bg-base: #2d3436;
