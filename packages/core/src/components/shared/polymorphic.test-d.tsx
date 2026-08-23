@@ -127,7 +127,11 @@ describe('Polymorphic component type checks', () => {
     const _invalidPropOnPaper = <NuPaper href="https://example.com">Invalid</NuPaper>;
 
     // @ts-expect-error HTMLButtonElement ref is not valid when component="a"
-    const _mismatchedRefOnAnchorButton = <NuButton component="a" href="https://example.com" ref={btnRef}>Link</NuButton>;
+    const _mismatchedRefOnAnchorButton = (
+      <NuButton component="a" href="https://example.com" ref={btnRef}>
+        Link
+      </NuButton>
+    );
 
     // @ts-expect-error HTMLAnchorElement ref is not valid on default button NuButton
     const _mismatchedRefOnDefaultButton = <NuButton ref={anchorRef}>Button</NuButton>;
@@ -136,13 +140,21 @@ describe('Polymorphic component type checks', () => {
     const _invalidPropOnButton = <NuButton href="https://example.com">Invalid</NuButton>;
 
     // @ts-expect-error HTMLDivElement ref is not valid when component="a" on NuPaper
-    const _mismatchedRefOnAnchorPaper = <NuPaper component="a" href="https://example.com" ref={divRef}>Anchor</NuPaper>;
+    const _mismatchedRefOnAnchorPaper = (
+      <NuPaper component="a" href="https://example.com" ref={divRef}>
+        Anchor
+      </NuPaper>
+    );
 
     // @ts-expect-error href is not allowed on default div NuAppShellSection
     const _invalidPropOnSection = <NuAppShellSection href="https://example.com">Section</NuAppShellSection>;
 
     // @ts-expect-error HTMLDivElement ref is not valid when component="a" on NuAppShellSection
-    const _mismatchedRefOnAnchorSection = <NuAppShellSection component="a" href="https://example.com" ref={divRef}>Section</NuAppShellSection>;
+    const _mismatchedRefOnAnchorSection = (
+      <NuAppShellSection component="a" href="https://example.com" ref={divRef}>
+        Section
+      </NuAppShellSection>
+    );
 
     expectTypeOf(_invalidPropOnPaper).toEqualTypeOf<React.JSX.Element>();
     expectTypeOf(_mismatchedRefOnAnchorButton).toEqualTypeOf<React.JSX.Element>();
