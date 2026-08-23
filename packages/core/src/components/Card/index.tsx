@@ -1,12 +1,17 @@
-import { Card as MantineCard, type CardProps as MantineCardProps, type CardSectionProps } from '@mantine/core';
+import {
+  Card as MantineCard,
+  type CardProps as MantineCardProps,
+  type CardSectionProps as MantineCardSectionProps,
+  createPolymorphicComponent,
+} from '@mantine/core';
 import clsx from 'clsx';
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import type { NeumorphismVariant } from '../../theme';
 
 import className from './index.module.css';
 
-export interface NuCardProps extends MantineCardProps {
+export interface _NuCardProps extends MantineCardProps {
   /** ニューモーフィズムの variant */
   neuVariant?: NeumorphismVariant;
 }
@@ -14,7 +19,7 @@ export interface NuCardProps extends MantineCardProps {
 /**
  * ニューモーフィズムスタイルの Card コンポーネント
  */
-export const NuCard = forwardRef<HTMLDivElement, NuCardProps>(
+const _NuCard = forwardRef<HTMLDivElement, _NuCardProps>(
   ({ neuVariant = 'raised', className: propsClassName, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
@@ -26,7 +31,10 @@ export const NuCard = forwardRef<HTMLDivElement, NuCardProps>(
   },
 );
 
-NuCard.displayName = 'NuCard';
+_NuCard.displayName = 'NuCard';
+
+export const NuCard = createPolymorphicComponent<'div', _NuCardProps>(_NuCard);
+export type NuCardProps = _NuCardProps;
 
 /** NuCard.Section - Card のセクションコンポーネント */
-export const NuCardSection: React.FC<CardSectionProps> = MantineCard.Section;
+export const NuCardSection = createPolymorphicComponent<'div', MantineCardSectionProps>(MantineCard.Section);

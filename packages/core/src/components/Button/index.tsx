@@ -1,15 +1,18 @@
-import { Button as MantineButton, type ButtonProps as MantineButtonProps } from '@mantine/core';
+import {
+  Button as MantineButton,
+  type ButtonProps as MantineButtonProps,
+  createPolymorphicComponent,
+} from '@mantine/core';
 import clsx from 'clsx';
-import { forwardRef, type MouseEventHandler } from 'react';
+import { forwardRef } from 'react';
 
 import type { NeumorphismVariant } from '../../theme';
 
 import className from './index.module.css';
 
-export interface NuButtonProps extends Omit<MantineButtonProps, 'variant'> {
+export interface _NuButtonProps extends Omit<MantineButtonProps, 'variant'> {
   /** ニューモーフィズムの variant */
   neuVariant?: NeumorphismVariant;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 /**
@@ -18,7 +21,7 @@ export interface NuButtonProps extends Omit<MantineButtonProps, 'variant'> {
  * Mantine の Button をベースに、ニューモーフィズムの
  * raised (凸) / inset (凹) / flat スタイルを適用します。
  */
-export const NuButton = forwardRef<HTMLButtonElement, NuButtonProps>(
+const _NuButton = forwardRef<HTMLButtonElement, _NuButtonProps>(
   ({ neuVariant = 'raised', className: propsClassName, size = 'md', ...props }, ref) => {
     const sizeClass =
       {
@@ -41,4 +44,7 @@ export const NuButton = forwardRef<HTMLButtonElement, NuButtonProps>(
   },
 );
 
-NuButton.displayName = 'NuButton';
+_NuButton.displayName = 'NuButton';
+
+export const NuButton = createPolymorphicComponent<'button', _NuButtonProps>(_NuButton);
+export type NuButtonProps = _NuButtonProps;

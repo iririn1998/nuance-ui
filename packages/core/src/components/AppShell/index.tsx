@@ -1,10 +1,10 @@
 import {
   AppShell as MantineAppShell,
   type AppShellProps as MantineAppShellProps,
-  type AppShellSectionProps,
+  type AppShellSectionProps as MantineAppShellSectionProps,
+  createPolymorphicComponent,
 } from '@mantine/core';
 import clsx from 'clsx';
-import React from 'react';
 
 import className from './index.module.css';
 
@@ -36,4 +36,6 @@ export const NuAppShellHeader = MantineAppShell.Header;
 export const NuAppShellNavbar = MantineAppShell.Navbar;
 export const NuAppShellMain = MantineAppShell.Main;
 export const NuAppShellFooter = MantineAppShell.Footer;
-export const NuAppShellSection: React.FC<AppShellSectionProps> = MantineAppShell.Section;
+export const NuAppShellSection = createPolymorphicComponent<'div', MantineAppShellSectionProps>(
+  MantineAppShell.Section,
+);

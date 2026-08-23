@@ -5,6 +5,7 @@
     "build": "pnpm --filter neumorph-ui build",
     "dev": "pnpm --filter @neumorph-ui/storybook dev",
     "test": "pnpm --filter neumorph-ui test",
+    "typecheck": "pnpm --filter neumorph-ui typecheck",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && changeset publish"

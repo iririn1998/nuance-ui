@@ -1,4 +1,8 @@
-import { Avatar as MantineAvatar, type AvatarProps as MantineAvatarProps } from '@mantine/core';
+import {
+  Avatar as MantineAvatar,
+  type AvatarProps as MantineAvatarProps,
+  createPolymorphicComponent,
+} from '@mantine/core';
 import clsx from 'clsx';
 import { forwardRef } from 'react';
 
@@ -6,7 +10,7 @@ import type { NeumorphismVariant } from '../../theme';
 
 import className from './index.module.css';
 
-export interface NuAvatarProps extends MantineAvatarProps {
+export interface _NuAvatarProps extends MantineAvatarProps {
   /** ニューモーフィズムの variant */
   neuVariant?: NeumorphismVariant;
 }
@@ -14,7 +18,7 @@ export interface NuAvatarProps extends MantineAvatarProps {
 /**
  * ニューモーフィズムスタイルの Avatar コンポーネント
  */
-export const NuAvatar = forwardRef<HTMLDivElement, NuAvatarProps>(
+const _NuAvatar = forwardRef<HTMLDivElement, _NuAvatarProps>(
   ({ neuVariant = 'raised', className: propsClassName, ...props }, ref) => {
     const variantClass = {
       raised: className.raised,
@@ -26,4 +30,7 @@ export const NuAvatar = forwardRef<HTMLDivElement, NuAvatarProps>(
   },
 );
 
-NuAvatar.displayName = 'NuAvatar';
+_NuAvatar.displayName = 'NuAvatar';
+
+export const NuAvatar = createPolymorphicComponent<'div', _NuAvatarProps>(_NuAvatar);
+export type NuAvatarProps = _NuAvatarProps;
