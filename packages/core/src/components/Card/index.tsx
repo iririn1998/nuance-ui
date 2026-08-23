@@ -1,7 +1,7 @@
 import {
   Card as MantineCard,
   type CardProps as MantineCardProps,
-  type CardSection,
+  type CardSectionProps as MantineCardSectionProps,
   createPolymorphicComponent,
 } from '@mantine/core';
 import clsx from 'clsx';
@@ -37,4 +37,4 @@ export const NuCard = createPolymorphicComponent<'div', _NuCardProps>(_NuCard);
 export type NuCardProps = _NuCardProps;
 
 /** NuCard.Section - Card のセクションコンポーネント */
-export const NuCardSection: typeof CardSection = MantineCard.Section;
+export const NuCardSection = createPolymorphicComponent<'div', MantineCardSectionProps>(MantineCard.Section);
