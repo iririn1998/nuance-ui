@@ -1,8 +1,4 @@
-import {
-  createTheme,
-  type CSSVariablesResolver,
-  type MantineThemeOverride,
-} from '@mantine/core';
+import { createTheme, type CSSVariablesResolver, type MantineThemeOverride } from '@mantine/core';
 
 /**
  * ニューモーフィズムの variant タイプ
@@ -119,19 +115,16 @@ export const neumorphismDefaults = {
 /**
  * variant に応じた box-shadow を生成するヘルパー
  */
-export function getNeumorphismShadow(
-  variant: NeumorphismVariant,
-  size?: NeumorphismSize,
-): string {
+export function getNeumorphismShadow(variant: NeumorphismVariant, size?: NeumorphismSize): string {
   const d = size
     ? (neumorphismVars[
-        `distance${size === '2xl' ? '2xl' : (size.charAt(0).toUpperCase() + size.slice(1))}` as keyof typeof neumorphismVars
+        `distance${size === '2xl' ? '2xl' : size.charAt(0).toUpperCase() + size.slice(1)}` as keyof typeof neumorphismVars
       ] ?? neumorphismVars.distance)
     : neumorphismVars.distance;
 
   const b = size
     ? (neumorphismVars[
-        `blur${size === '2xl' ? '2xl' : (size.charAt(0).toUpperCase() + size.slice(1))}` as keyof typeof neumorphismVars
+        `blur${size === '2xl' ? '2xl' : size.charAt(0).toUpperCase() + size.slice(1)}` as keyof typeof neumorphismVars
       ] ?? neumorphismVars.blur)
     : neumorphismVars.blur;
 

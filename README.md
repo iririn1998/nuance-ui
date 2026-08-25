@@ -36,7 +36,7 @@ import 'neumorph-ui/styles.css';
 export default function App() {
   return (
     <MantineProvider theme={neumorphismTheme}>
-      <div style={{ padding: '2rem', backgroundColor: '#e0e5ec', minHeight: '100vh' }}>
+      <div style={{ padding: '2rem', backgroundColor: 'var(--neu-bg-base)', minHeight: '100vh' }}>
         <NuCard style={{ maxWidth: 420, margin: '0 auto' }}>
           <h2>Hello, Neumorph UI</h2>
           <NuTextInput label="Username" placeholder="Enter your username" />
@@ -44,6 +44,58 @@ export default function App() {
           <NuButton mt="md" fullWidth>Submit</NuButton>
         </NuCard>
       </div>
+    </MantineProvider>
+  );
+}
+```
+
+---
+
+## デザイントークンとカスタマイズ
+
+Neumorph UI は一元化された CSS 変数（トークン）体系を採用しており、CSS または TypeScript（MantineProvider）から簡単にカスタマイズできます。
+
+### CSS 変数によるカスタマイズ
+```css
+:root {
+  --neu-bg-base: #f0f3f8;
+  --neu-intensity-dark: 0.2;
+}
+
+[data-mantine-color-scheme='dark'] {
+  --neu-bg-base: #1a1b1e;
+  --neu-intensity-dark: 0.5;
+}
+```
+
+### MantineProvider によるカスタマイズ
+```tsx
+import {
+  createNeumorphismTheme,
+  neumorphismCssVariablesResolver,
+  neumorphismDefaults,
+} from 'neumorph-ui';
+
+const theme = createNeumorphismTheme({
+  other: {
+    neumorphism: {
+      light: {
+        ...neumorphismDefaults.light,
+        bgBase: '#f0f3f8',
+      },
+      dark: {
+        ...neumorphismDefaults.dark,
+        bgBase: '#1a1b1e',
+      },
+      sizes: neumorphismDefaults.sizes,
+    },
+  },
+});
+
+export function App() {
+  return (
+    <MantineProvider theme={theme} cssVariablesResolver={neumorphismCssVariablesResolver}>
+      {/* ... */}
     </MantineProvider>
   );
 }
@@ -92,7 +144,6 @@ pnpm --filter neumorph-ui typecheck
 ```bash
 pnpm changeset
 ```
-対話式プロンプトで対象パッケージ（`neumorph-ui`）、バージョンアップ種別（major / minor / patch）、サマリーを入力します。
 
 ### 2. PR の作成とマージ
 作成された `.changeset/*.md` を含めて PR を作成（または `main` に push）します。
