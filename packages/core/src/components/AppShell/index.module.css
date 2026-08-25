@@ -1,40 +1,23 @@
 .root {
-  --neu-bg-base: #e0e5ec;
   background-color: var(--neu-bg-base);
 }
 
-:global([data-mantine-color-scheme='dark']) .root {
-  --neu-bg-base: #2d3436;
-}
-
 .header {
-  --neu-distance: 4px;
-  --neu-blur: 8px;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.12);
-  --neu-shadow-light: rgba(255, 255, 255, 0.7);
+  --neu-distance: var(--neu-distance-md);
+  --neu-blur: var(--neu-blur-md);
 
   background-color: var(--neu-bg-base);
   border: none;
   box-shadow: 0 var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark);
 }
 
-:global([data-mantine-color-scheme='dark']) .header {
-  --neu-shadow-dark: rgba(0, 0, 0, 0.3);
-}
-
 .navbar {
-  --neu-distance: 4px;
-  --neu-blur: 8px;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.1);
-  --neu-shadow-light: rgba(255, 255, 255, 0.7);
+  --neu-distance: var(--neu-distance-md);
+  --neu-blur: var(--neu-blur-md);
 
   background-color: var(--neu-bg-base);
   border: none;
   box-shadow: var(--neu-distance) 0 var(--neu-blur) var(--neu-shadow-dark);
-}
-
-:global([data-mantine-color-scheme='dark']) .navbar {
-  --neu-shadow-dark: rgba(0, 0, 0, 0.3);
 }
 
 .main {
@@ -42,15 +25,10 @@
 }
 
 .footer {
-  --neu-distance: 4px;
-  --neu-blur: 8px;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.12);
+  --neu-distance: var(--neu-distance-md);
+  --neu-blur: var(--neu-blur-md);
 
   background-color: var(--neu-bg-base);
   border: none;
   box-shadow: 0 calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-dark);
-}
-
-:global([data-mantine-color-scheme='dark']) .footer {
-  --neu-shadow-dark: rgba(0, 0, 0, 0.3);
 }
