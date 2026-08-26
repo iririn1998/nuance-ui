@@ -1,6 +1,6 @@
 {
   "name": "neumorph-ui",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A neumorphism-inspired UI component library built on top of Mantine",
   "license": "MIT",
   "author": "iririn <iririn199810710@gmail.com>",
