@@ -1,7 +1,13 @@
 .root {
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.12);
+
   border: none;
   height: 2px;
   background: linear-gradient(to right, var(--neu-shadow-dark), var(--neu-shadow-light));
+}
+
+:global([data-mantine-color-scheme='dark']) .root {
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.4);
 }
 
 /* Vertical orientation */

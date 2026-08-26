@@ -1,17 +1,6 @@
 /* Unified Neumorphism Design Tokens */
 
-:root,
-[data-mantine-color-scheme='light'] {
-  /* Colors */
-  --neu-bg-base: #e0e5ec;
-  --neu-bg-hover: #d5dae2;
-  --neu-shadow-dark-rgb: 0, 0, 0;
-  --neu-shadow-light-rgb: 255, 255, 255;
-  --neu-intensity-dark: 0.15;
-  --neu-intensity-light: 0.8;
-  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark));
-  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light));
-
+:root {
   /* Size scales: distance & blur */
   --neu-distance-xs: 2px;
   --neu-blur-xs: 4px;
@@ -34,6 +23,19 @@
   /* Default distance & blur (aliases to lg) */
   --neu-distance: var(--neu-distance-lg);
   --neu-blur: var(--neu-blur-lg);
+}
+
+:root,
+[data-mantine-color-scheme='light'] {
+  /* Colors */
+  --neu-bg-base: #e0e5ec;
+  --neu-bg-hover: #d5dae2;
+  --neu-shadow-dark-rgb: 0, 0, 0;
+  --neu-shadow-light-rgb: 255, 255, 255;
+  --neu-intensity-dark: 0.15;
+  --neu-intensity-light: 0.8;
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark));
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light));
 }
 
 [data-mantine-color-scheme='dark'] {

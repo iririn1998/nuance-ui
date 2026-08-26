@@ -1,9 +1,16 @@
 .root {
   --neu-distance: var(--neu-distance-md);
   --neu-blur: var(--neu-blur-md);
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.1);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.7);
 
   background-color: var(--neu-bg-base);
   box-shadow:
     inset var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
     inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
+}
+
+:global([data-mantine-color-scheme='dark']) .root {
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.3);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.03);
 }

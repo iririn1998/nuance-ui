@@ -1,6 +1,8 @@
 .content {
   --neu-distance: var(--neu-distance-2xl);
   --neu-blur: var(--neu-blur-2xl);
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.2);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.8);
 
   background-color: var(--neu-bg-base);
   border: none;
@@ -8,6 +10,11 @@
   box-shadow:
     var(--neu-distance) var(--neu-distance) var(--neu-blur) var(--neu-shadow-dark),
     calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur) var(--neu-shadow-light);
+}
+
+:global([data-mantine-color-scheme='dark']) .content {
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.5);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.05);
 }
 
 .header {
