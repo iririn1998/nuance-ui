@@ -1,9 +1,8 @@
 .content {
-  --neu-bg-base: #e0e5ec;
-  --neu-distance: 10px;
-  --neu-blur: 20px;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.2);
-  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+  --neu-distance: var(--neu-distance-2xl);
+  --neu-blur: var(--neu-blur-2xl);
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.2);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.8);
 
   background-color: var(--neu-bg-base);
   border: none;
@@ -13,9 +12,8 @@
 }
 
 :global([data-mantine-color-scheme='dark']) .content {
-  --neu-bg-base: #2d3436;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.5);
-  --neu-shadow-light: rgba(255, 255, 255, 0.05);
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.5);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.05);
 }
 
 .header {
@@ -27,10 +25,8 @@
 }
 
 .close {
-  --neu-distance: 3px;
-  --neu-blur: 6px;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
-  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+  --neu-distance: var(--neu-distance-sm);
+  --neu-blur: var(--neu-blur-sm);
 
   background-color: var(--neu-bg-base);
   border: none;

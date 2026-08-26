@@ -1,9 +1,8 @@
 .root {
-  --neu-bg-base: #e0e5ec;
-  --neu-distance: 4px;
-  --neu-blur: 8px;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.1);
-  --neu-shadow-light: rgba(255, 255, 255, 0.7);
+  --neu-distance: var(--neu-distance-md);
+  --neu-blur: var(--neu-blur-md);
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.1);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.7);
 
   background-color: var(--neu-bg-base);
   box-shadow:
@@ -12,7 +11,6 @@
 }
 
 :global([data-mantine-color-scheme='dark']) .root {
-  --neu-bg-base: #2d3436;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.3);
-  --neu-shadow-light: rgba(255, 255, 255, 0.03);
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), 0.3);
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), 0.03);
 }

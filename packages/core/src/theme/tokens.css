@@ -1,0 +1,51 @@
+/* Unified Neumorphism Design Tokens */
+
+:root {
+  /* Size scales: distance & blur */
+  --neu-distance-xs: 2px;
+  --neu-blur-xs: 4px;
+
+  --neu-distance-sm: 3px;
+  --neu-blur-sm: 6px;
+
+  --neu-distance-md: 4px;
+  --neu-blur-md: 8px;
+
+  --neu-distance-lg: 6px;
+  --neu-blur-lg: 12px;
+
+  --neu-distance-xl: 8px;
+  --neu-blur-xl: 16px;
+
+  --neu-distance-2xl: 10px;
+  --neu-blur-2xl: 20px;
+
+  /* Default distance & blur (aliases to lg) */
+  --neu-distance: var(--neu-distance-lg);
+  --neu-blur: var(--neu-blur-lg);
+}
+
+:root,
+[data-mantine-color-scheme='light'] {
+  /* Colors */
+  --neu-bg-base: #e0e5ec;
+  --neu-bg-hover: #d5dae2;
+  --neu-shadow-dark-rgb: 0, 0, 0;
+  --neu-shadow-light-rgb: 255, 255, 255;
+  --neu-intensity-dark: 0.15;
+  --neu-intensity-light: 0.8;
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark));
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light));
+}
+
+[data-mantine-color-scheme='dark'] {
+  /* Colors */
+  --neu-bg-base: #2d3436;
+  --neu-bg-hover: #363d3f;
+  --neu-shadow-dark-rgb: 0, 0, 0;
+  --neu-shadow-light-rgb: 255, 255, 255;
+  --neu-intensity-dark: 0.4;
+  --neu-intensity-light: 0.05;
+  --neu-shadow-dark: rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark));
+  --neu-shadow-light: rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light));
+}
