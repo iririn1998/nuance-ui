@@ -70,24 +70,17 @@ Neumorph UI は一元化された CSS 変数（トークン）体系を採用し
 
 ### MantineProvider によるカスタマイズ
 ```tsx
+import { MantineProvider } from '@mantine/core';
 import {
   createNeumorphismTheme,
   neumorphismCssVariablesResolver,
-  neumorphismDefaults,
 } from 'neumorph-ui';
 
 const theme = createNeumorphismTheme({
   other: {
     neumorphism: {
-      light: {
-        ...neumorphismDefaults.light,
-        bgBase: '#f0f3f8',
-      },
-      dark: {
-        ...neumorphismDefaults.dark,
-        bgBase: '#1a1b1e',
-      },
-      sizes: neumorphismDefaults.sizes,
+      light: { bgBase: '#f0f3f8' },
+      dark: { bgBase: '#1a1b1e' },
     },
   },
 });

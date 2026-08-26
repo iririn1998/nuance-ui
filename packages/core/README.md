@@ -142,27 +142,18 @@ CSS ファイルで `--neu-bg-base` やシャドウ強度を上書きするだ�
 `createNeumorphismTheme` と `neumorphismCssVariablesResolver` を使用して、Mantine テーマ経由でトークンをカスタマイズできます。
 
 ```tsx
-import { MantineProvider, createTheme } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 import {
   createNeumorphismTheme,
   neumorphismCssVariablesResolver,
-  neumorphismDefaults,
 } from 'neumorph-ui';
 
 const theme = createNeumorphismTheme({
   primaryColor: 'teal',
   other: {
     neumorphism: {
-      light: {
-        ...neumorphismDefaults.light,
-        bgBase: '#f0f3f8',
-        intensityDark: 0.2,
-      },
-      dark: {
-        ...neumorphismDefaults.dark,
-        bgBase: '#1a1b1e',
-      },
-      sizes: neumorphismDefaults.sizes,
+      light: { bgBase: '#f0f3f8', intensityDark: 0.2 },
+      dark: { bgBase: '#1a1b1e' },
     },
   },
 });
