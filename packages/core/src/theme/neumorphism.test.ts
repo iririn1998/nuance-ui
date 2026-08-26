@@ -118,8 +118,8 @@ describe('neumorphism design tokens & theme', () => {
         '--neu-blur-xl': '16px',
         '--neu-distance-2xl': '10px',
         '--neu-blur-2xl': '20px',
-        '--neu-distance': '6px',
-        '--neu-blur': '12px',
+        '--neu-distance': 'var(--neu-distance-lg)',
+        '--neu-blur': 'var(--neu-blur-lg)',
       });
 
       expect(resolved.light).toEqual({
@@ -129,8 +129,8 @@ describe('neumorphism design tokens & theme', () => {
         '--neu-shadow-light-rgb': '255, 255, 255',
         '--neu-intensity-dark': '0.15',
         '--neu-intensity-light': '0.8',
-        '--neu-shadow-dark': 'rgba(0, 0, 0, 0.15)',
-        '--neu-shadow-light': 'rgba(255, 255, 255, 0.8)',
+        '--neu-shadow-dark': 'rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark))',
+        '--neu-shadow-light': 'rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light))',
       });
 
       expect(resolved.dark).toEqual({
@@ -140,8 +140,8 @@ describe('neumorphism design tokens & theme', () => {
         '--neu-shadow-light-rgb': '255, 255, 255',
         '--neu-intensity-dark': '0.4',
         '--neu-intensity-light': '0.05',
-        '--neu-shadow-dark': 'rgba(0, 0, 0, 0.4)',
-        '--neu-shadow-light': 'rgba(255, 255, 255, 0.05)',
+        '--neu-shadow-dark': 'rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark))',
+        '--neu-shadow-light': 'rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light))',
       });
     });
 
@@ -179,9 +179,31 @@ describe('neumorphism design tokens & theme', () => {
       expect(resolved.variables['--neu-blur-lg']).toBe('16px');
       expect(resolved.light['--neu-bg-base']).toBe('#f0f3f8');
       expect(resolved.light['--neu-intensity-dark']).toBe('0.2');
-      expect(resolved.light['--neu-shadow-dark']).toBe('rgba(10, 20, 30, 0.2)');
+      expect(resolved.light['--neu-shadow-dark']).toBe('rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark))');
       expect(resolved.dark['--neu-bg-base']).toBe('#1a1b1e');
       expect(resolved.dark['--neu-intensity-dark']).toBe('0.5');
+    });
+
+    it('fills missing values for partial theme overrides', () => {
+      const partialTheme = createTheme({
+        other: {
+          neumorphism: {
+            light: { bgBase: '#f0f3f8' },
+            sizes: { lg: { distance: '8px' } },
+          },
+        },
+      });
+
+      const resolved = neumorphismCssVariablesResolver(
+        partialTheme as unknown as Parameters<typeof neumorphismCssVariablesResolver>[0],
+      );
+
+      expect(resolved.variables['--neu-distance-xs']).toBe('2px');
+      expect(resolved.variables['--neu-blur-lg']).toBe('12px');
+      expect(resolved.variables['--neu-distance-lg']).toBe('8px');
+      expect(resolved.light['--neu-bg-base']).toBe('#f0f3f8');
+      expect(resolved.light['--neu-bg-hover']).toBe('#d5dae2');
+      expect(resolved.dark['--neu-bg-base']).toBe('#2d3436');
     });
   });
 
@@ -200,6 +222,26 @@ describe('neumorphism design tokens & theme', () => {
       });
       expect(theme.primaryColor).toBe('teal');
       expect(theme.defaultRadius).toBe('xl');
+    });
+
+    it('deep-merges partial neumorphism overrides', () => {
+      const theme = createNeumorphismTheme({
+        other: {
+          neumorphism: {
+            light: { bgBase: '#f0f3f8' },
+            sizes: { lg: { distance: '8px' } },
+          },
+        },
+      });
+      const neumorphism = theme.other?.neumorphism as typeof neumorphismDefaults;
+
+      expect(neumorphism.light).toEqual({
+        ...neumorphismDefaults.light,
+        bgBase: '#f0f3f8',
+      });
+      expect(neumorphism.sizes.lg).toEqual({ distance: '8px', blur: '12px' });
+      expect(neumorphism.sizes.xs).toEqual(neumorphismDefaults.sizes.xs);
+      expect(neumorphism.dark).toEqual(neumorphismDefaults.dark);
     });
   });
 });

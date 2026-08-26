@@ -74,6 +74,44 @@ export interface NeumorphismSizeTokens {
 }
 
 /**
+ * ニューモーフィズムの完全なテーマ設定
+ */
+export interface NeumorphismThemeTokens {
+  light: NeumorphismColorSchemeTokens;
+  dark: NeumorphismColorSchemeTokens;
+  sizes: Record<NeumorphismSize, NeumorphismSizeTokens>;
+
+  // 既存プロパティとの後方互換性
+  bgBase: string;
+  bgBaseDark: string;
+  distance: string;
+  blur: string;
+  intensityDark: string;
+  intensityLight: string;
+  intensityDarkDm: string;
+  intensityLightDm: string;
+}
+
+/**
+ * ニューモーフィズムのテーマ設定の部分更新
+ */
+export interface NeumorphismThemeOverride {
+  light?: Partial<NeumorphismColorSchemeTokens>;
+  dark?: Partial<NeumorphismColorSchemeTokens>;
+  sizes?: Partial<Record<NeumorphismSize, Partial<NeumorphismSizeTokens>>>;
+
+  // 既存プロパティとの後方互換性
+  bgBase?: string;
+  bgBaseDark?: string;
+  distance?: string;
+  blur?: string;
+  intensityDark?: string;
+  intensityLight?: string;
+  intensityDarkDm?: string;
+  intensityLightDm?: string;
+}
+
+/**
  * ニューモーフィズムのデフォルト設定
  */
 export const neumorphismDefaults = {
@@ -110,7 +148,46 @@ export const neumorphismDefaults = {
   intensityLight: '0.8',
   intensityDarkDm: '0.4',
   intensityLightDm: '0.05',
-} as const;
+} as const satisfies NeumorphismThemeTokens;
+
+const neumorphismSizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+
+/**
+ * 部分的な設定を既定値へ再帰的にマージする
+ */
+function mergeNeumorphismTokens(custom: unknown): NeumorphismThemeTokens {
+  const override = isRecord(custom) ? custom : {};
+  const light = isRecord(override.light) ? override.light : {};
+  const dark = isRecord(override.dark) ? override.dark : {};
+  const sizesOverride = isRecord(override.sizes) ? override.sizes : {};
+  const sizes = {} as NeumorphismThemeTokens['sizes'];
+
+  neumorphismSizes.forEach((size) => {
+    const sizeOverride = isRecord(sizesOverride[size]) ? sizesOverride[size] : {};
+    sizes[size] = {
+      ...neumorphismDefaults.sizes[size],
+      ...sizeOverride,
+    } as NeumorphismSizeTokens;
+  });
+
+  return {
+    ...neumorphismDefaults,
+    ...override,
+    light: {
+      ...neumorphismDefaults.light,
+      ...light,
+    } as NeumorphismColorSchemeTokens,
+    dark: {
+      ...neumorphismDefaults.dark,
+      ...dark,
+    } as NeumorphismColorSchemeTokens,
+    sizes,
+  } as NeumorphismThemeTokens;
+}
 
 /**
  * variant に応じた box-shadow を生成するヘルパー
@@ -145,11 +222,8 @@ export function getNeumorphismShadow(variant: NeumorphismVariant, size?: Neumorp
  * MantineProvider に渡す Neumorphism CSS 変数リゾルバー
  */
 export const neumorphismCssVariablesResolver: CSSVariablesResolver = (theme) => {
-  const custom = (theme.other as { neumorphism?: typeof neumorphismDefaults })?.neumorphism;
-
-  const light = custom?.light ?? neumorphismDefaults.light;
-  const dark = custom?.dark ?? neumorphismDefaults.dark;
-  const sizes = custom?.sizes ?? neumorphismDefaults.sizes;
+  const custom = isRecord(theme.other) ? theme.other.neumorphism : undefined;
+  const { light, dark, sizes } = mergeNeumorphismTokens(custom);
 
   return {
     variables: {
@@ -165,8 +239,8 @@ export const neumorphismCssVariablesResolver: CSSVariablesResolver = (theme) => 
       '--neu-blur-xl': sizes.xl.blur,
       '--neu-distance-2xl': sizes['2xl'].distance,
       '--neu-blur-2xl': sizes['2xl'].blur,
-      '--neu-distance': sizes.lg.distance,
-      '--neu-blur': sizes.lg.blur,
+      '--neu-distance': 'var(--neu-distance-lg)',
+      '--neu-blur': 'var(--neu-blur-lg)',
     },
     light: {
       '--neu-bg-base': light.bgBase,
@@ -175,8 +249,8 @@ export const neumorphismCssVariablesResolver: CSSVariablesResolver = (theme) => 
       '--neu-shadow-light-rgb': light.shadowLightRgb,
       '--neu-intensity-dark': String(light.intensityDark),
       '--neu-intensity-light': String(light.intensityLight),
-      '--neu-shadow-dark': `rgba(${light.shadowDarkRgb}, ${light.intensityDark})`,
-      '--neu-shadow-light': `rgba(${light.shadowLightRgb}, ${light.intensityLight})`,
+      '--neu-shadow-dark': 'rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark))',
+      '--neu-shadow-light': 'rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light))',
     },
     dark: {
       '--neu-bg-base': dark.bgBase,
@@ -185,8 +259,8 @@ export const neumorphismCssVariablesResolver: CSSVariablesResolver = (theme) => 
       '--neu-shadow-light-rgb': dark.shadowLightRgb,
       '--neu-intensity-dark': String(dark.intensityDark),
       '--neu-intensity-light': String(dark.intensityLight),
-      '--neu-shadow-dark': `rgba(${dark.shadowDarkRgb}, ${dark.intensityDark})`,
-      '--neu-shadow-light': `rgba(${dark.shadowLightRgb}, ${dark.intensityLight})`,
+      '--neu-shadow-dark': 'rgba(var(--neu-shadow-dark-rgb), var(--neu-intensity-dark))',
+      '--neu-shadow-light': 'rgba(var(--neu-shadow-light-rgb), var(--neu-intensity-light))',
     },
   };
 };
@@ -195,7 +269,7 @@ export const neumorphismCssVariablesResolver: CSSVariablesResolver = (theme) => 
  * カスタム設定を受け取って MantineThemeOverride を作成するヘルパー
  */
 export function createNeumorphismTheme(override?: MantineThemeOverride): MantineThemeOverride {
-  return createTheme({
+  const baseTheme: MantineThemeOverride = {
     primaryColor: 'blue',
     defaultRadius: 'lg',
     shadows: {
@@ -215,7 +289,17 @@ export function createNeumorphismTheme(override?: MantineThemeOverride): Mantine
     other: {
       neumorphism: neumorphismDefaults,
     },
+  };
+  const overrideOther = isRecord(override?.other) ? override.other : {};
+
+  return createTheme({
+    ...baseTheme,
     ...override,
+    other: {
+      ...baseTheme.other,
+      ...overrideOther,
+      neumorphism: mergeNeumorphismTokens(overrideOther.neumorphism),
+    },
   });
 }
 

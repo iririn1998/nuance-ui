@@ -12,6 +12,8 @@ export {
   type NeumorphismSize,
   type NeumorphismColorSchemeTokens,
   type NeumorphismSizeTokens,
+  type NeumorphismThemeTokens,
+  type NeumorphismThemeOverride,
 } from './theme';
 
 // Components - Buttons
