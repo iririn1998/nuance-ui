@@ -9,6 +9,7 @@ import {
   NuButton,
   NuCard,
   NuCardSection,
+  NuMenuItem,
   NuPaper,
 } from '../../index';
 
@@ -118,6 +119,21 @@ describe('Polymorphic component type checks', () => {
     expectTypeOf(sectionElement).toEqualTypeOf<React.JSX.Element>();
   });
 
+  it('NuMenuItem accepts polymorphic anchor props and ref types', () => {
+    const btnRef = createRef<HTMLButtonElement>();
+    const anchorRef = createRef<HTMLAnchorElement>();
+
+    const defaultElement = <NuMenuItem ref={btnRef}>Item</NuMenuItem>;
+    const anchorElement = (
+      <NuMenuItem component="a" href="https://example.com" ref={anchorRef}>
+        Item Link
+      </NuMenuItem>
+    );
+
+    expectTypeOf(defaultElement).toEqualTypeOf<React.JSX.Element>();
+    expectTypeOf(anchorElement).toEqualTypeOf<React.JSX.Element>();
+  });
+
   it('rejects invalid props and mismatched refs with compile-time type errors', () => {
     const divRef = createRef<HTMLDivElement>();
     const btnRef = createRef<HTMLButtonElement>();
@@ -144,6 +160,15 @@ describe('Polymorphic component type checks', () => {
     // @ts-expect-error HTMLDivElement ref is not valid when component="a" on NuAppShellSection
     const _mismatchedRefOnAnchorSection = <NuAppShellSection component="a" ref={divRef} />;
 
+    // @ts-expect-error HTMLButtonElement ref is not valid when component="a" on NuMenuItem
+    const _mismatchedRefOnAnchorMenuItem = <NuMenuItem component="a" ref={btnRef} />;
+
+    // @ts-expect-error HTMLAnchorElement ref is not valid on default button NuMenuItem
+    const _mismatchedRefOnDefaultMenuItem = <NuMenuItem ref={anchorRef} />;
+
+    // @ts-expect-error href is not allowed on default button NuMenuItem
+    const _invalidPropOnMenuItem = <NuMenuItem href="https://example.com" />;
+
     expectTypeOf(_invalidPropOnPaper).toEqualTypeOf<React.JSX.Element>();
     expectTypeOf(_mismatchedRefOnAnchorButton).toEqualTypeOf<React.JSX.Element>();
     expectTypeOf(_mismatchedRefOnDefaultButton).toEqualTypeOf<React.JSX.Element>();
@@ -151,5 +176,8 @@ describe('Polymorphic component type checks', () => {
     expectTypeOf(_mismatchedRefOnAnchorPaper).toEqualTypeOf<React.JSX.Element>();
     expectTypeOf(_invalidPropOnSection).toEqualTypeOf<React.JSX.Element>();
     expectTypeOf(_mismatchedRefOnAnchorSection).toEqualTypeOf<React.JSX.Element>();
+    expectTypeOf(_mismatchedRefOnAnchorMenuItem).toEqualTypeOf<React.JSX.Element>();
+    expectTypeOf(_mismatchedRefOnDefaultMenuItem).toEqualTypeOf<React.JSX.Element>();
+    expectTypeOf(_invalidPropOnMenuItem).toEqualTypeOf<React.JSX.Element>();
   });
 });
