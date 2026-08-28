@@ -3,14 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 import React from 'react';
 
-import {
-  NuMenu,
-  NuMenuTarget,
-  NuMenuDropdown,
-  NuMenuItem,
-  NuMenuLabel,
-  NuMenuDivider,
-} from '.';
+import { NuMenu, NuMenuTarget, NuMenuDropdown, NuMenuItem, NuMenuLabel, NuMenuDivider } from '.';
 import { NuButton } from '../Button';
 
 const onItemClickMock = fn();
@@ -84,9 +77,7 @@ export const Default: Story = {
     await expect(onItemClickMock).toHaveBeenCalledOnce();
 
     // クリック後、閉じるトランジションの完了とともにメニューが破棄されることを確認
-    await waitFor(() =>
-      expect(canvas.queryByRole('menuitem', { name: 'Settings' })).not.toBeInTheDocument(),
-    );
+    await waitFor(() => expect(canvas.queryByRole('menuitem', { name: 'Settings' })).not.toBeInTheDocument());
   },
 };
 
@@ -99,12 +90,8 @@ export const WithSections: Story = {
       </NuMenuTarget>
       <NuMenuDropdown>
         <NuMenuLabel>Account</NuMenuLabel>
-        <NuMenuItem rightSection={<span style={{ fontSize: '11px', opacity: 0.6 }}>⌘K</span>}>
-          Search
-        </NuMenuItem>
-        <NuMenuItem rightSection={<span style={{ fontSize: '11px', opacity: 0.6 }}>⌘S</span>}>
-          Settings
-        </NuMenuItem>
+        <NuMenuItem rightSection={<span style={{ fontSize: '11px', opacity: 0.6 }}>⌘K</span>}>Search</NuMenuItem>
+        <NuMenuItem rightSection={<span style={{ fontSize: '11px', opacity: 0.6 }}>⌘S</span>}>Settings</NuMenuItem>
         <NuMenuDivider />
         <NuMenuItem color="red">Logout</NuMenuItem>
       </NuMenuDropdown>
