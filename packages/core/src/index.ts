@@ -50,6 +50,20 @@ export {
 // Components - Navigation
 export { NuTabs, NuTabsList, NuTabsTab, NuTabsPanel, type NuTabsProps } from './components/Tabs';
 export { NuSegmentedControl, type NuSegmentedControlProps } from './components/SegmentedControl';
+export {
+  NuMenu,
+  NuMenuTarget,
+  NuMenuDropdown,
+  NuMenuItem,
+  NuMenuLabel,
+  NuMenuDivider,
+  type NuMenuProps,
+  type NuMenuTargetProps,
+  type NuMenuDropdownProps,
+  type NuMenuItemProps,
+  type NuMenuLabelProps,
+  type NuMenuDividerProps,
+} from './components/Menu';
 
 // Components - Overlays
 export { NuTooltip, type NuTooltipProps } from './components/Tooltip';
