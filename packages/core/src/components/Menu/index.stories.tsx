@@ -1,6 +1,6 @@
 import { MantineProvider } from '@mantine/core';
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, userEvent, within } from '@storybook/test';
+import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 import React from 'react';
 
 import {
@@ -72,18 +72,21 @@ export const Default: Story = {
     // ターゲットボタンをクリックしてメニューを開く
     await userEvent.click(targetButton);
 
+    // ドロップダウンはトランジション付きで表示されるため、可視状態になるまで待つ
     const settingsItem = await canvas.findByRole('menuitem', { name: 'Settings' });
-    await expect(settingsItem).toBeVisible();
+    await waitFor(() => expect(settingsItem).toBeVisible());
 
-    const deleteItem = await canvas.findByRole('menuitem', { name: 'Delete account' });
+    const deleteItem = canvas.getByRole('menuitem', { name: 'Delete account' });
     await expect(deleteItem).toBeVisible();
 
     // メニュー項目をクリック
     await userEvent.click(settingsItem);
     await expect(onItemClickMock).toHaveBeenCalledOnce();
 
-    // クリック後にメニューが閉じることを確認
-    await expect(canvas.queryByRole('menuitem', { name: 'Settings' })).not.toBeInTheDocument();
+    // クリック後、閉じるトランジションの完了とともにメニューが破棄されることを確認
+    await waitFor(() =>
+      expect(canvas.queryByRole('menuitem', { name: 'Settings' })).not.toBeInTheDocument(),
+    );
   },
 };
 
